@@ -119,6 +119,7 @@ int check_cycle(listint_t *list)
 		}
 		list = list->next;
 	}
-	free(seen);
+	if (count > 0)
+		free(seen);
 	return (1);
 }
