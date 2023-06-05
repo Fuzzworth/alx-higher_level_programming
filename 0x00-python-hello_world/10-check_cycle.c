@@ -1,13 +1,35 @@
 #include <stdio.h>
 #include "lists.h"
 
+/**
+ * print_seen - prints seen array
+ *
+ * Description: prints seen array
+ *
+ * @seen: seen array
+ * @num: number of things to print
+ *
+ * Return: void
+ */
 void print_seen(size_t **seen, int num)
 {
 	int i;
+
 	for (i = 0; i < num; i++)
 		printf("\ncount = %d ,seen[%d] = %lu", num, i, *seen[i]);
 }
 
+/**
+ * init_seen - prints seen array
+ *
+ * Description: prints seen array
+ *
+ * @seen: seen array
+ * @list: list pointer
+ * @count: number of things to print
+ *
+ * Return: void
+ */
 void init_seen(size_t **seen, listint_t **list, int *count)
 {
 	*seen = malloc(sizeof(size_t) * 1);
@@ -17,6 +39,17 @@ void init_seen(size_t **seen, listint_t **list, int *count)
 	*count = *count + 1;
 }
 
+/**
+ * has_been_seen - prints seen array
+ *
+ * Description: prints seen array
+ *
+ * @seen: seen array
+ * @list: list pinter
+ * @count: number of things to print
+ *
+ * Return: 1 for True, 0 for false
+ */
 int has_been_seen(size_t **seen, listint_t **list, int count)
 {
 	int i;
@@ -27,6 +60,17 @@ int has_been_seen(size_t **seen, listint_t **list, int count)
 	return (0);
 }
 
+/**
+ * add_to_seen - prints seen array
+ *
+ * Description: prints seen array
+ *
+ * @seen: seen array
+ * @list: list pointer
+ * @num: number of things to print
+ *
+ * Return: void
+ */
 void add_to_seen(size_t **seen, listint_t **list, int *count)
 {
 	size_t *new_seen;
@@ -57,6 +101,7 @@ int check_cycle(listint_t *list)
 {
 	size_t *seen = NULL;
 	int count = 0;
+
 	while (list != NULL)
 	{
 		if (count == 0)
@@ -65,7 +110,7 @@ int check_cycle(listint_t *list)
 		}
 		else
 		{
-			if (has_been_seen(&seen , &list, count))
+			if (has_been_seen(&seen, &list, count))
 			{
 				free(seen);
 				return (0);
