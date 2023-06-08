@@ -4,7 +4,7 @@ module_name = 'hidden'  # Replace with your .pyc module name (without the extens
 module_path = './hidden_4.pyc'  # Replace with the actual path to your .pyc file
 spec = importlib.util.spec_from_file_location(module_name, module_path)
 module = importlib.util.module_from_spec(spec)
-modules = dir()
+modules = dir("spec")
 if __name__ == "__main__":
     for m in modules:
         print(m)
