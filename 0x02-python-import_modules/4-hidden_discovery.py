@@ -9,7 +9,7 @@ module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(module)
 
 # Use dir() to get the attributes and methods of the module
-module_attributes = dir(module)
+module_attributes = dir()
 
 # Filter and print only the lines that don't start with "__"
 filtered_attributes = [attr for attr in module_attributes if not attr.startswith('__')]
