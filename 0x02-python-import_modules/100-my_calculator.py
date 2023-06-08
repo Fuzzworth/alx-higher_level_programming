@@ -26,4 +26,3 @@ if __name__ == "__main__":
         operator = argv[2]
         b = int(argv[3])
         calculate(a, operator, b)
-
