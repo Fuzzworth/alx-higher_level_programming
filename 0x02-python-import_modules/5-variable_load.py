@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-from variable_load import a
+import variable_load.a as a
 print("{}".format(a))
