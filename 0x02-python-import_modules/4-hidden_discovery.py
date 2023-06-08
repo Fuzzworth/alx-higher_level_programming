@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-import hidden_4
+import imp
+hidden_module = = imp.load_compiled("hidden", "./hidden_4.pyc")
 modules = dir()
 if __name__ == "__main__":
     for module in modules:
