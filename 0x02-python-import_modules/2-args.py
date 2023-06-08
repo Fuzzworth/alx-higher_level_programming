@@ -19,4 +19,4 @@ if __name__ == "__main__":
         print_args()
     else:
         print("{:d} {}".format(argc, arg_str_n))
-        print_args
+        print_args()
