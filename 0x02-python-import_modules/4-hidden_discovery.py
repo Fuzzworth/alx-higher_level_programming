@@ -7,5 +7,4 @@ module = importlib.util.module_from_spec(spec)
 modules = dir("hidden")
 if __name__ == "__main__":
     for m in modules:
-        if (m.startswith("__") == False):
-            print(m)
+        print(m)
