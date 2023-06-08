@@ -12,9 +12,9 @@ def print_args():
 
 
 if __name__ == "__main__":
-    if (argc == 1):
+    if (argc == 0):
         print("{:d} {}".format(argc, arg_str_0))
-    elif (argc == 2):
+    elif (argc == 1):
         print("{:d} {}".format(argc, arg_str_1))
         print_args()
     else:
