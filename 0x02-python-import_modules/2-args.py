@@ -3,7 +3,7 @@ from sys import argv
 arg_str_0 = "arguments."
 arg_str_1 = "argument:"
 arg_str_n = "arguments:"
-argc = len(argv)
+argc = len(argv) - 1
 
 
 def print_args():
