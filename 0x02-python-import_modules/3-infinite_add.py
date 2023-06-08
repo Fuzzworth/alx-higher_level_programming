@@ -7,6 +7,7 @@ def sum_args():
     sum = 0
     for i in range(1, len(argv)):
         sum += int(argv[i])
+    return sum
 
 
 if __name__ == "__main__":
