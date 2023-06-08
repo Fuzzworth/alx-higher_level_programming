@@ -1,6 +1,13 @@
 #!/usr/bin/python3
-modules = dir(__import__('hidden_4'))
+import importlib.util
+module_name = 'hidden'  # Replace with your .pyc module name (without the extension)
+module_path = './hidden_4.pyc'  # Replace with the actual path to your .pyc file
+
+spec = importlib.util.spec_from_file_location(module_name, module_path)
+module = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(module)
+modules = dir(module)
 if __name__ == "__main__":
-    for module in modules:
-        if (not module.startswith("__")):
-            print(module)
+    for m in modules:
+        if (not m.startswith("__")):
+            print(m)
