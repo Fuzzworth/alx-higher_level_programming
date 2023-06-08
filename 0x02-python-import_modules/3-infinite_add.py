@@ -4,7 +4,7 @@ argc = len(argv) - 1
 
 
 def sum_args():
-    sum = 0;
+    sum = 0
     for i in range(1, len(argv)):
         sum += int(argv[i])
 
