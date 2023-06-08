@@ -2,6 +2,7 @@
 from calculator_1 import add, sub, mul, div
 from sys import argv
 
+
 def calculate(a, operator, b):
     if operator == "+":
         print("{:d} {} {:d} = {:d}".format(a, b, operator, add(a, b)))
