@@ -7,7 +7,7 @@ argc = len(argv) - 1
 
 
 def print_args():
-    for i in range(argc):
+    for i in range(1, argc):
         print("{:d}: {}".format(i + 1, argv[i]))
 
 
