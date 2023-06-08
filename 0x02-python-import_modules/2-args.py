@@ -4,6 +4,8 @@ arg_str_0 = "arguments."
 arg_str_1 = "argument:"
 arg_str_n = "arguments:"
 argc = len(argv)
+
+
 def print_args():
     for i in range(argc):
         print("{:d}: {}".format(i + 1, argv[i]))
