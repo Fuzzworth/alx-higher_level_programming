@@ -20,8 +20,6 @@ int is_palindrome(listint_t **head)
 		return (1);
 	for (count = 0; current != NULL; count++, current = current->next)
 		;
-	if (count == 0)
-		return (1);
 	current = *head;
 	list_array = (int *) malloc(sizeof(int) * count);
 	if (list_array == NULL)
@@ -30,6 +28,10 @@ int is_palindrome(listint_t **head)
 		list_array[i] = current->n;
 	for (i = i - 1; i >= 0; i--, current = current->next)
 		if (list_array[i] != current->n)
+		{
+			free(list_array);
 			return (0);
+		}
+	free(list_array);
 	return (1);
 }
