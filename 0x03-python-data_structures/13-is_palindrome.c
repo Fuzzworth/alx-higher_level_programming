@@ -14,7 +14,7 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *current = *head;
 	int i, count, mid;
-	int list_array[1024];
+	int list_array[2048];
 
 	if (current == NULL)
 		return (1);
