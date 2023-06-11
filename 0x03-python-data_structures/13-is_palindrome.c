@@ -23,7 +23,7 @@ int is_palindrome(listint_t **head)
 	if (count == 1)
 		return (1);
 	current = *head;
-	if (count % 2 == 0)
+	if (count % 2 == 1)
 		mid = count / 2;
 	else
 		mid = (count / 2) + 1;
