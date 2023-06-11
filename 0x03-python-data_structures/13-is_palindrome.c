@@ -13,7 +13,7 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *current = *head;
-	int i, count;
+	int i, count, mid;
 	int list_array[1024];
 
 	if (current == NULL)
@@ -23,9 +23,13 @@ int is_palindrome(listint_t **head)
 	if (count == 1)
 		return (1);
 	current = *head;
-	for (i = 0; i < ((count) / 2); i++, current = current->next)
+	if (count % 2 == 0)
+		mid = count / 2;
+	else
+		mid = (count / 2) + 1;
+	for (i = 0; i < mid; i++, current = current->next)
 		list_array[i] = current->n;
-	for (i = i - 1; i >= 0; i--, current = current->next)
+	for (i = i; i >= 0; i--, current = current->next)
 		if (list_array[i] != current->n)
 			return (0);
 	return (1);
