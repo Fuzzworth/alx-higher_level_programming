@@ -24,8 +24,13 @@ int is_palindrome(listint_t **head)
 		return (1);
 	current = *head;
 	if (count % 2 == 0)
-		for (i = 0; i <= (count / 2); i++, current = current->next)
+	{
+		for (i = 0; i < (count / 2); i++, current = current->next)
 			list_array[i] = current->n;
+		for (i = i - 1; i >= 0; i--, current = current->next)
+			if (list_array[i] != current->n)
+				return (0);
+	}
 	else
 	{
 		for (i = 0; i <= (count / 2); i++, current = current->next)
