@@ -23,7 +23,7 @@ int is_palindrome(listint_t **head)
 	if (count == 1)
 		return (1);
 	current = *head;
-	for (i = 0; i < (count / 2); i++, current = current->next)
+	for (i = 0; i <= (count / 2); i++, current = current->next)
 		list_array[i] = current->n;
 	for (i = i - 1; i >= 0; i--, current = current->next)
 	{
