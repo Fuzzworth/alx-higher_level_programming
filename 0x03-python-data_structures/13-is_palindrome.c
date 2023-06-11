@@ -25,11 +25,12 @@ int is_palindrome(listint_t **head)
 	list_array = (int *) malloc(sizeof(int) * count);
 	if (list_array == NULL)
 		return (0);
-	for (i = 0; i < ((count - 1) / 2) && current != NULL; i++)
+	for (i = 0; i < ((count) / 2) && current != NULL; i++)
 	{
 		list_array[i] = current->n;
 		current = current->next;
 	}
+	current = current->next;
 	for (; i >= 0 && current != NULL; i--)
 	{
 		if (list_array[i] != current->n)
