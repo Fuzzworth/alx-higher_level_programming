@@ -32,8 +32,5 @@ int is_palindrome(listint_t **head)
 		if (list_array[i] != current->n)
 			return (0);
 	}
-	if (i != 0)
-		return (0);
-
 	return (1);
 }
