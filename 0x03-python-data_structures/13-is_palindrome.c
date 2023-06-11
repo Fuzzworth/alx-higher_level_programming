@@ -20,6 +20,8 @@ int is_palindrome(listint_t **head)
 		return (1);
 	for (count = 0; current != NULL; count++, current = current->next)
 		;
+	if (count == 1)
+		return (1);
 	current = *head;
 	for (i = 0; i < ((count) / 2); i++, current = current->next)
 		list_array[i] = current->n;
