@@ -14,24 +14,17 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *current = *head;
 	int i, count;
-	int *list_array;
+	int list_array[1024];
 
 	if (current == NULL)
 		return (1);
 	for (count = 0; current != NULL; count++, current = current->next)
 		;
 	current = *head;
-	list_array = (int *) malloc(sizeof(int) * count);
-	if (list_array == NULL)
-		return (0);
 	for (i = 0; i < ((count) / 2); i++, current = current->next)
 		list_array[i] = current->n;
 	for (i = i - 1; i >= 0; i--, current = current->next)
 		if (list_array[i] != current->n)
-		{
-			free(list_array);
 			return (0);
-		}
-	free(list_array);
 	return (1);
 }
