@@ -30,7 +30,11 @@ int is_palindrome(listint_t **head)
 		for (i = 0; i <= (count / 2); i++, current = current->next)
 			list_array[i] = current->n;
 	for (i = i - 1; i >= 0; i--, current = current->next)
+	{
+		printf("\ncurrent->n = %d, list_array[%d] = %d\n",
+				current->n, i, list_array[i]);
 		if (list_array[i] != current->n)
 			return (0);
+	}
 	return (1);
 }
