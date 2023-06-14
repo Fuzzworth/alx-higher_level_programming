@@ -8,4 +8,3 @@ def weight_average(my_list=[]):
         numerator += (top * bottom)
         denominator += bottom
     return float(top / bottom)
-
