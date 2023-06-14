@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def update_dictionary(a_dictionary, key, value):
-    new_dictionary = a.a_dictionary.copy()
+    new_dictionary = a_dictionary.copy()
     if key in new_dictionary:
         new_dictionary.update(key=value)
     else:
