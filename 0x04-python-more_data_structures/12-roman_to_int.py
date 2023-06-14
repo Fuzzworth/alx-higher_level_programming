@@ -12,7 +12,7 @@ def roman_to_int(roman_string):
             }
     if roman_string:
         total_sum = 0
-        roman_string.[::-1]
+        roman_string[::-1]
         last_key = 0
         current_key = 0
         for symbol in roman_string:
