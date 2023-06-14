@@ -14,7 +14,7 @@ def roman_to_int(roman_string):
         total_sum = 0
         roman_string.reverse()
         last_key = 0
-        current_key = None
+        current_key = 0
         for symbol in roman_string:
             current_key = roman_dict.get(symbol)
             if last_key != 0 and last_key > current_key:
