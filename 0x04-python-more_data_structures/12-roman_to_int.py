@@ -19,7 +19,7 @@ def roman_to_int(roman_string):
             current_key = roman_dict.get(symbol, 0)
             if last_key != 0 and last_key > current_key:
                 total_sum -= current_key
-            elif last_key != 0 and ast_key >= current_key:
+            elif last_key != 0 and last_key >= current_key:
                 total_sum += current_key
             elif last_key == 0:
                 total_sum += current_key
