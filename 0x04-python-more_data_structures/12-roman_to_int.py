@@ -12,16 +12,14 @@ def roman_to_int(roman_string):
             }
     if roman_string:
         total_sum = 0
-        roman_string[::-1]
-        print(roman_string)
         last_key = 0
         current_key = 0
         for symbol in roman_string:
             current_key = roman_dict.get(symbol, 0)
-            if last_key != 0 and last_key > current_key:
-                total_sum -= current_key
-            elif last_key != 0 and last_key >= current_key:
+            if last_key != 0 and last_key >= current_key:
                 total_sum += current_key
+            elif last_key != 0 and last_key < current_key:
+                total_sum -= current_key
             elif last_key == 0:
                 total_sum += current_key
             last_key = current_key
