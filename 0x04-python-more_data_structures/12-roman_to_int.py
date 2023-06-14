@@ -19,7 +19,7 @@ def roman_to_int(roman_string):
             if last_key != 0 and last_key >= current_key:
                 total_sum += current_key
             elif last_key != 0 and last_key < current_key:
-                total_sum -= current_key
+                total_sum += (current_key - last_key)
             elif last_key == 0:
                 total_sum += current_key
             last_key = current_key
