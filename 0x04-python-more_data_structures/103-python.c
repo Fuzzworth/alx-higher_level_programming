@@ -16,10 +16,10 @@ void print_python_bytes(PyObject *p)
 {
 	long int size_of_bytes, i;
 
+	printf("[.] bytes object info\n");
 	if (PyBytes_CheckExact(p))
 	{
 		size_of_bytes = PyBytes_Size(p);
-		printf("[.] bytes object info\n");
 		printf("  size: %ld\n", size_of_bytes);
 		printf("  trying string: %s\n", PyBytes_AsString(p));
 		if (size_of_bytes >= 10)
