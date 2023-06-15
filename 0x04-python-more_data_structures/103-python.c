@@ -22,7 +22,7 @@ void print_python_bytes(PyObject *p)
 		printf("[.] bytes object info\n");
 		printf("  size: %ld\n", size_of_bytes);
 		printf("  trying string: %s\n", PyBytes_AsString(p));
-		if (size_of_bytes > 10)
+		if (size_of_bytes >= 10)
 			size_of_bytes = 10;
 		else
 			size_of_bytes++;
