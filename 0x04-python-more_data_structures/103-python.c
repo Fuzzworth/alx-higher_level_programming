@@ -1,6 +1,7 @@
 #include <Python.h>
 #include <listobject.h>
 #include <object.h>
+#include <bytesobject.h>
 
 void print_python_list(PyObject *p);
 void print_python_bytes(PyObject *p);
@@ -27,11 +28,11 @@ void print_python_list(PyObject *p)
 	for (list_index = 0; list_index < size_of_list; list_index++)
 	{
 		temp = PyList_GET_ITEM(p, list_index);
-		if PyBytes_Check(temp)
+		if (PyBytes_CheckExact(temp))
 			print_python_bytes(temp);
 		else
 			printf("Element %ld: %s\n", list_index,
-					Py_TYPE(temp)->tp_name);
+					temp->ob_type->tp_name);
 	}
 }
 
@@ -46,12 +47,23 @@ void print_python_list(PyObject *p)
  */
 void print_python_bytes(PyObject *p)
 {
-	long int size_of_bytes = PyBytes_Size(p);
-	PyBytesObject *byte_object = (PyBytesObject *) p;
+	long int size_of_bytes, i;
 
-	printf("[.] bytes object info\n");
-	printf("  size: %ld\n", size_of_bytes);
-	printf("  trying string: %s\n", PyBytes_AsString(byte_object));
-	printf("  first %ld bytes: %x\n", size_of_bytes + 1,
-			PyBytes_AsString(byte_object));
+	if (PyBytes_CheckExact(p))
+	{
+		size_of_bytes = PyBytes_Size(p);
+		printf("[.] bytes object info\n");
+		printf("  size: %ld\n", size_of_bytes);
+		printf("  trying string: %s\n", PyBytes_AsString(p));
+		if (size_of_bytes > 10)
+			size_of_bytes = 10;
+		else
+			size_of_bytes++;
+		printf("  first %ld bytes:", size_of_bytes);
+		for (i = 0; i < size_of_bytes; i++)
+			printf(" %02x", (int) PyBytes_AsString(p)[i] & 0xff);
+		printf("\n");
+	}
+	else
+		printf("  [ERROR] Invalid Bytes Object\n");
 }
