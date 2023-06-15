@@ -57,10 +57,9 @@ void print_python_list(PyObject *p)
 	for (list_index = 0; list_index < size_of_list; list_index++)
 	{
 		temp = PyList_GET_ITEM(p, list_index);
+		printf("Element %ld: %s\n", list_index,
+				temp->ob_type->tp_name);
 		if (PyBytes_CheckExact(temp))
 			print_python_bytes(temp);
-		else
-			printf("Element %ld: %s\n", list_index,
-					temp->ob_type->tp_name);
 	}
 }
