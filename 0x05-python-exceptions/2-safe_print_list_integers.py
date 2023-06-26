@@ -4,7 +4,7 @@ def safe_print_list_integers(my_list=[], x=0):
     try:
         while x > 0:
             if type(my_list[index]) is int:
-                print("{:d}".format(my_list[count]), end="")
+                print("{:d}".format(my_list[index]), end="")
                 count += 1
                 x -= 1
             index += 1
