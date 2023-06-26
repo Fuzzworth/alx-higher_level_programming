@@ -3,7 +3,8 @@ def safe_print_integer(value):
     try:
         if value or value is None:
             raise ValueError
-        print("{:d}".format(int(value)))
+        value = int(value)
+        print("{:d}".format(value))
         return True
     except ValueError:
         return False
