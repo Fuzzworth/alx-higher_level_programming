@@ -2,6 +2,8 @@
 def safe_print_list_integers(my_list=[], x=0):
     count = index = 0
     try:
+        if x < 0:
+            raise ValueError
         while x > 0:
             if type(my_list[index]) is int:
                 print("{:d}".format(my_list[index]), end="")
