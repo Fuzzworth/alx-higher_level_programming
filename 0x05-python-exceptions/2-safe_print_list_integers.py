@@ -6,7 +6,7 @@ def safe_print_list_integers(my_list=[], x=0):
             if type(my_list[x] != int):
                 print("{}".format(my_list[count]), end="")
                 count += 1
-            x -= 1
+                x -= 1
         print("")
     except Exception:
         print("")
