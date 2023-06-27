@@ -12,7 +12,7 @@ class Square:
         size (int): Human readable string describing the exception.
         position (tuple): Tuple
     """
-    def __init__(self, size=0, position=(0,0)):
+    def __init__(self, size=0, position=(0, 0)):
         """
         The __init__ method may be documented in either the class level
         docstring, or as a docstring on the __init__ method itself.
