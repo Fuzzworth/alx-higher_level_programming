@@ -27,7 +27,6 @@ void print_python_float(PyObject *p)
 	{
 		value = PyFloat_AsDouble(p);
 
-		snprintf(buffer, sizeof(buffer), "%.*f", precision, value);
 		length = snprintf(buffer, sizeof(buffer), "%.*f", precision, value);
 		tem_len = length;
 		while (buffer[tem_len - 1] != '.')
