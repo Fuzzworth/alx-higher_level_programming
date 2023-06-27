@@ -95,8 +95,16 @@ class Square:
         if self.__size == 0:
             print("")
         else:
-            for i in range(self.size):
-                print("#" * self.__size)
+            string_to_print = ""
+            for i in range(self.position[1]):
+                string_to_print += "\n"
+            for x in range(self.size):
+                for y in range(self.position[0]):
+                    string_to_print += " "
+                for z in range(self.size):
+                    string_to_print += "#"
+                string_to_print += "\n"
+            print("{}".format(string_to_print))
 
     @property
     def position(self):
