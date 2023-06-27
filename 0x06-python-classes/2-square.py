@@ -7,7 +7,7 @@ This is a module that Write a class Square
 class Square:
     """
     This is a module that Write a class Square
-    
+
     Attributes:
         size (int): Human readable string describing the exception.
     """
