@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This is a module that Write a class Square that defines a square by: (based on 0-square.py)
+This is a module that Write a class
+Square that defines a square by: (based on 0-square.py)
 """
 
 
