@@ -104,7 +104,7 @@ class Square:
                 for z in range(self.size):
                     string_to_print += "#"
                 string_to_print += "\n"
-            print("{}".format(string_to_print))
+            print("{}".format(string_to_print), end='')
 
     @property
     def position(self):
@@ -126,7 +126,7 @@ class Square:
             Do not include the `self` parameter in the ``Args`` section.
 
         Args:
-            value (tuple): value int
+            value (tuple): value tuple
         Returns:
             Area
         """
