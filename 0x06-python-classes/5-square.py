@@ -75,7 +75,7 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = value
 
-    def area(self):
+    def my_print(self):
         """
         Note:
             Do not include the `self` parameter in the ``Args`` section.
