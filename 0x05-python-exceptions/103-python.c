@@ -34,7 +34,7 @@ void print_python_float(PyObject *p)
 			if (buffer[tem_len - 1] >= '1' && buffer[tem_len - 1] <= '9')
 			{
 				if (allZeros)
-					stop_print = tem_len;
+					stop_print = tem_len - 1;
 				allZeros = 0;
 			}
 			tem_len--;
@@ -43,7 +43,7 @@ void print_python_float(PyObject *p)
 		if (allZeros)
 			buffer[tem_len + 1] = '\0';
 		else
-			buffer[stop_print] = '\0';
+			buffer[stop_print + 1] = '\0';
 		(void) stop_print;
 		printf("  value: %s\n", buffer);
 	}
