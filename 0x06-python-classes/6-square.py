@@ -99,7 +99,7 @@ class Square:
                 print("#" * self.__size)
 
     @property
-    def property(self):
+    def position(self):
         """
         Note:
             Do not include the `self` parameter in the ``Args`` section.
@@ -111,7 +111,7 @@ class Square:
         """
         return self.__position
 
-    @positon.setter
+    @position.setter
     def position(self, value):
         """
         Note:
