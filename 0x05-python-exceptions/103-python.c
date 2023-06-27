@@ -16,7 +16,7 @@ void print_python_float(PyObject *p)
 {
 	double value;
 	char buffer[100];
-	int precision = 15;
+	int precision = 50;
 	int length, tem_len, stop_print, allZeros = 1;
 
 	fflush(stdout);
