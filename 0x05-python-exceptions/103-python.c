@@ -66,7 +66,7 @@ void print_python_bytes(PyObject *p)
 	printf("[.] bytes object info\n");
 	if (PyBytes_CheckExact(p))
 	{
-		string = ((PyBytesObject *)(p))->ob_sval;
+		string = ((PyBytesObject *) p)->ob_sval;
 		size_of_bytes = PyBytes_Size(p);
 		printf("  size: %ld\n", size_of_bytes);
 		printf("  trying string: %s\n", string);
