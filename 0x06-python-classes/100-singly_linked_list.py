@@ -133,3 +133,4 @@ class SinglyLinkedList(object):
         if current_node is None:
             if previous_node is not None:
                 previous_node.next_node = new_node
+            new_node.next_node = current_node
