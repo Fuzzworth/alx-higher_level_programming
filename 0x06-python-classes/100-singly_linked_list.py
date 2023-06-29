@@ -109,9 +109,11 @@ class SinglyLinkedList(object):
 
     def __str__(self):
         current_node = self.__head
+        sll = ""
         while current_node is not None:
-            print("{:d}".format(current_node.data))
+            sll += "{:d}\n".format(current_node.data)
             current_node = current_node.next_node
+        return sll
 
     def sorted_insert(self, value):
         new_node = Node(value)
