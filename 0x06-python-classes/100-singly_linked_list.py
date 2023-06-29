@@ -128,4 +128,5 @@ class SinglyLinkedList(object):
                 previous_node = current_node
                 current_node = current_node.next_node
         if current_node is None:
-            previous_node.next_node = new_node
+            if previous_node is not None:
+                previous_node.next_node = new_node
