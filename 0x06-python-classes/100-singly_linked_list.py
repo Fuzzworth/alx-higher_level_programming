@@ -127,13 +127,14 @@ class SinglyLinkedList(object):
             self.__head = new_node
         else:
             while current_node is not None:
-                if current_node.data > new_node.data and previous_node is None:
+                if current_node.data >= new_node.data and previous_node is None:
                     print("New Node Start: ",new_node)
                     new_node.next_node = current_node
                     self.__head = new_node
                     break
-                if current_node.data > new_node.data:
+                if current_node.data >= new_node.data:
                     print("New Node Middle: ",new_node)
+                    previous_node.next_node = new_node
                     new_node.next_node = current_node
                     break
                 previous_node = current_node
