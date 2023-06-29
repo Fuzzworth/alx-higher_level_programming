@@ -120,7 +120,6 @@ class SinglyLinkedList(object):
 
     def sorted_insert(self, value):
         new_node = Node(value)
-        print("New Node: ",new_node)
         current_node = self.__head
         previous_node = None
         if current_node is None:
@@ -128,6 +127,7 @@ class SinglyLinkedList(object):
         else:
             while current_node is not None:
                 if current_node.data > new_node.data:
+                    print("New Node Middle: ",new_node)
                     if previous_node is not None:
                         previous_node.next_node = new_node
                     new_node.next_node = current_node
@@ -135,5 +135,6 @@ class SinglyLinkedList(object):
                 previous_node = current_node
                 current_node = current_node.next_node
             if current_node is None:
+                print("New Node End: ",new_node)
                 if previous_node is not None:
                     previous_node.next_node = new_node
