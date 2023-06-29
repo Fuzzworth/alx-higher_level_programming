@@ -57,7 +57,7 @@ class Node:
 
         Args:
             value (int): Description of `param1`.
-        
+
         Raises:
             TypeError: that are relevant to the interface.
         """
