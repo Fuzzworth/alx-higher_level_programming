@@ -113,7 +113,7 @@ class SinglyLinkedList(object):
             print("{:d}".format(current_node.data))
 
     def sorted_insert(self, value):
-        new_node = Node(value)
+        new_node = Node(value, None)
         current_node = self.__head
         previous_node = None
         if current_node is None:
