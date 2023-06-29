@@ -82,6 +82,9 @@ class Node(object):
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
+    def __str__(self):
+        return self.__data
+
 
 class SinglyLinkedList(object):
     """Exceptions are documented in the same way as classes.
@@ -117,6 +120,7 @@ class SinglyLinkedList(object):
 
     def sorted_insert(self, value):
         new_node = Node(value)
+        print(new_node)
         current_node = self.__head
         previous_node = None
         if current_node is None:
