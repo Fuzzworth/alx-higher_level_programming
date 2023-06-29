@@ -33,6 +33,7 @@ Todo:
 
 """
 
+
 class Node(object):
     """Exceptions are documented in the same way as classes.
 
