@@ -116,7 +116,7 @@ class SinglyLinkedList(object):
         new_node = Node(value)
         current_node = self.__head
         previous_node = None
-        if current_node = None:
+        if current_node is None:
             self.__head = new_node
         else:
             while current_node is not None:
