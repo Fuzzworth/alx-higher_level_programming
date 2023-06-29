@@ -110,8 +110,8 @@ class SinglyLinkedList(object):
     def __init__(self):
         self.__head = None
 
-    def print(self):
-        current_node = self.__head
+    def print(self, sll):
+        current_node = sll
         while current_node is not None:
             print("{:d}".format(current_node))
             current_node = current_node.next_node
