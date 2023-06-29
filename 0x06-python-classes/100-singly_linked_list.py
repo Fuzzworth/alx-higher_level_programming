@@ -30,7 +30,7 @@ class Node:
         Args:
             data (int): Description of `param1`.
             next_node (:obj:`Node`, optional): Description of `param2`
- 
+
         Raises:
             TypeError: that are relevant to the interface.
         """
