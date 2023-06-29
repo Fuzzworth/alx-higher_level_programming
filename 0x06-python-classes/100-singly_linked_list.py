@@ -83,7 +83,7 @@ class Node(object):
         self.__next_node = value
 
     def __str__(self):
-        return self.__data
+        return str(self.__data)
 
 
 class SinglyLinkedList(object):
