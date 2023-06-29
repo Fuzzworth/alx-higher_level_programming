@@ -111,6 +111,7 @@ class SinglyLinkedList(object):
         current_node = self.__head
         while current_node is not None:
             print("{:d}".format(current_node.data))
+            current_node = current_node.next_node
 
     def sorted_insert(self, value):
         new_node = Node(value)
