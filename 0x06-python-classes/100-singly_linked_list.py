@@ -81,7 +81,7 @@ class Node:
 
         Args:
             value (:obj:`Node`:): Description of `param1`.
-        
+
         Raises:
             TypeError: that are relevant to the interface.
         """
