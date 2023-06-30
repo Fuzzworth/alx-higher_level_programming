@@ -8,4 +8,7 @@ class MagicClass:
             raise TypeError('radius must be a number')
         self.__radius = radius
 
+    def circumference(self):
+        return (2 * math.pi) * self.__radius
+
 print(dis(MagicClass))
