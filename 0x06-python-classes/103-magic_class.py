@@ -4,4 +4,4 @@ from dis import dis
 class MagicClass:
     pass
 
-dis(MagicClass)
+print(dis(MagicClass))
