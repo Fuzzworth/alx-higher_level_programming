@@ -156,5 +156,6 @@ class Square:
                     string_to_print += " "
                 for z in range(self.size):
                     string_to_print += "#"
-                string_to_print += "\n"
+                if x != self.size - 1:
+                    string_to_print += "\n"
             return string_to_print
