@@ -2,6 +2,7 @@
 from dis import dis
 
 class MagicClass:
-    radius = 0
+    def __init__(self):
+        self.radius = 0
 
 print(dis(MagicClass))
