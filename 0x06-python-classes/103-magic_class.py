@@ -22,6 +22,7 @@ class MagicClass:
         Raises:
             TypeError: not an int
         """
+
         self.__radius = 0
         if type(radius) is not int:
             raise TypeError('radius must be a number')
@@ -29,4 +30,5 @@ class MagicClass:
 
     def circumference(self):
         """float: circumference"""
+
         return (2 * math.pi) * self.__radius
