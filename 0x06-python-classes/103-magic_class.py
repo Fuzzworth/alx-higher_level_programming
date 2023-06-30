@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 from dis import dis
+import math
 
 class MagicClass:
     def __init__(self, radius):
