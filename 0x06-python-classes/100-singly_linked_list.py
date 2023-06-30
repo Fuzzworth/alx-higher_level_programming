@@ -123,6 +123,7 @@ class SinglyLinkedList(object):
             value (int): integer
 
         """
+
         new_node = Node(value)
         current_node = self.__head
         previous_node = None
