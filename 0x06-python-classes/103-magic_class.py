@@ -2,7 +2,6 @@
 from dis import dis
 
 class MagicClass:
-    def __init__(self, radius):
-        self.radius = radius
+    self.radius = radius
 
 print(dis(MagicClass))
