@@ -115,6 +115,7 @@ class SinglyLinkedList(object):
             if count > 0:
                 sll += "\n"
             sll += "{:d}".format(current_node.data)
+            count += 1
             current_node = current_node.next_node
         return sll
 
