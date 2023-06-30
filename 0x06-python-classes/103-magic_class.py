@@ -6,4 +6,4 @@ class MagicClass:
         self.__radius = 0
         type(radius)
 
-print(dis(MagicClass(3)))
+print(dis(MagicClass))
