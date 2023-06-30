@@ -82,22 +82,22 @@ class Square:
             return self.__size < value.size
 
     def __le__(self, value):
-    if value is None:
-        return False
-    else:
-        return self.__size < value.size
+        if value is None:
+            return False
+        else:
+            return self.__size < value.size
 
     def __eq__(self, value):
-    if value is None:
-        return False
-    else:
-        return self.__size == value.size
+        if value is None:
+            return False
+        else:
+            return self.__size == value.size
 
     def __ne__(self, value):
-    if value is None:
-        return False
-    else:
-        return self.__size != value.size
+        if value is None:
+            return False
+        else:
+            return self.__size != value.size
 
     def __ge__(self, value):
         if value is None:
