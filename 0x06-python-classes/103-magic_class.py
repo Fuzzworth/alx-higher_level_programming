@@ -2,5 +2,6 @@
 from dis import dis
 
 class MagicClass:
+    pass
 
 dis(MagicClass)
