@@ -4,6 +4,6 @@ from dis import dis
 class MagicClass:
     def __init__(self, radius):
         self.__radius = 0
-        type(self.__radius)
+        type(radius)
 
-print(dis(MagicClass))
+print(dis(MagicClass(3)))
