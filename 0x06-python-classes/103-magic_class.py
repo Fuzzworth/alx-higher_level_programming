@@ -8,7 +8,7 @@ class MagicClass:
     """
     Magic class
 
-    Attribute:
+    Attributes:
         radius (int): integer
     """
     def __init__(self, radius):
@@ -27,5 +27,5 @@ class MagicClass:
         self.__radius = radius
 
     def circumference(self):
-        """int: radius"""
+        """float: circumference"""
         return (2 * math.pi) * self.__radius
