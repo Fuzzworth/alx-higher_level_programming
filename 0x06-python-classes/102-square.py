@@ -75,6 +75,36 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = value
 
+    def __lt__(self, value):
+        if value is None:
+            return False
+        else:
+            return self.__size < value.size
+
+    def __le__(self, value):
+    if value is None:
+        return False
+    else:
+        return self.__size < value.size
+
+    def __eq__(self, value):
+    if value is None:
+        return False
+    else:
+        return self.__size == value.size
+
+    def __ne__(self, value):
+    if value is None:
+        return False
+    else:
+        return self.__size != value.size
+
+    def __ge__(self, value):
+        if value is None:
+            return False
+        else:
+            return self.__size >= value.size
+    
     def __gt__(self, value):
         if value is None:
             return False
