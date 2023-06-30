@@ -109,9 +109,12 @@ class SinglyLinkedList(object):
     def __str__(self):
         """str: string"""
         current_node = self.__head
+        count = 0
         sll = ""
         while current_node is not None:
-            sll += "{:d}\n".format(current_node.data)
+            if count > 0:
+                sll += "\n"
+            sll += "{:d}".format(current_node.data)
             current_node = current_node.next_node
         return sll
 
