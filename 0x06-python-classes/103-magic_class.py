@@ -4,6 +4,7 @@ Magic class module
 """
 import math
 
+
 class MagicClass:
     """
     Magic class
