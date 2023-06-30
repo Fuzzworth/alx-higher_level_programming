@@ -104,7 +104,7 @@ class Square:
             return False
         else:
             return self.__size >= value.size
-    
+
     def __gt__(self, value):
         if value is None:
             return False
