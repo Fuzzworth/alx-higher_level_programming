@@ -135,3 +135,26 @@ class Square:
                 or value[0] < 0 or value[1] < 0):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
+
+    def __str__(self):
+        """
+        Note:
+            Do not include the `self` parameter in the ``Args`` section.
+
+        Args:
+
+        Returns:
+        """
+        if self.__size == 0:
+            return ""
+        else:
+            string_to_print = ""
+            for i in range(self.position[1]):
+                string_to_print += "\n"
+            for x in range(self.size):
+                for y in range(self.position[0]):
+                    string_to_print += " "
+                for z in range(self.size):
+                    string_to_print += "#"
+                string_to_print += "\n"
+            return string_to_print
