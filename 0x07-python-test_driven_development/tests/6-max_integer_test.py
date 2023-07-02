@@ -46,5 +46,5 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_max_integer_error_raised(self):
         """Test if nothing is given"""
-        with self.assertRaises(Exception):
+        with self.assertRaises(AssertionError):
             max_integer("string")
