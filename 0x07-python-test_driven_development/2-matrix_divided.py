@@ -19,7 +19,7 @@ def matrix_divided(matrix, div):
         list:list: new list
     """
     new_matrix = []
-    if (not isinstance(number, float) and not isinstance(number, int)):
+    if (not isinstance(div, float) and not isinstance(div, int)):
         raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")
