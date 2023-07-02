@@ -39,5 +39,5 @@ def matrix_divided(matrix, div):
             initial = float(number / div)
             result = float("{:.2f}".format(initial))
             new_row.append(result)
-        new_matrix.append(new_matrix)
+        new_matrix.append(new_row)
     return new_matrix
