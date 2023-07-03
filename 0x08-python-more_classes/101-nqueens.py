@@ -16,6 +16,7 @@ if N < 4:
     print("N must be at least 4")
     exit(1)
 
+
 def generate_matrix(size):
     """
     Generates a square matrix with 0 values.
