@@ -137,8 +137,6 @@ if __name__ == "__main__":
     if ans == []:
         print("Solution does not exist")
     else:
-        print(len(ans))
-        print(f"Out Of {len(ans)} solutions one is following")
         for i in ans:
             print(print_board(i, N))
          
