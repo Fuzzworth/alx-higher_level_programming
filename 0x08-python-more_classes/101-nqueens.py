@@ -21,19 +21,19 @@ if N < 4:
     exit(1)
 
 
-def generate_matrix(size):
+def generate_matrix(N):
     """
     Generates a square matrix with "." values.
 
     Args:
-        size (int): The size of the square matrix.
+        N (int): The size of the square matrix.
 
     Returns:
         list: A square matrix with dimensions `size x size`
         filled with "." values.
     """
-    matrix = [["." for i in range(size)] for j in range(size)]
-    return matrix
+    board = [["." for row in range(N)] for column in range(N)]
+    return board
 
 
 def create_list(board, N):
@@ -48,19 +48,19 @@ def create_list(board, N):
         list: list of positions
     """
     matrix = []
-    for i in range(N):
-        for j in range(N):
-            if board[i][j] == "X":
-                matrix.append([i, j])
+    for row in range(N):
+        for column in range(N):
+            if board[row][column] == "X":
+                matrix.append([row, column])
     return matrix
 
 
 def add_sol(board, results_list, N):
     temp = []
-    for i in range(N):
+    for row in range(N):
         string = ""
-        for j in range(N):
-            string += board[i][j]
+        for column in range(N):
+            string += board[row][column]
         temp.append(string)
     results_list.append(temp)
 
@@ -115,5 +115,5 @@ if __name__ == "__main__":
     NQueens(0, results_list, board, N)
 
     if len(results_list) != 0:
-        for i in results_list:
-            print(create_list(i, N))
+        for result in results_list:
+            print(create_list(result, N))
