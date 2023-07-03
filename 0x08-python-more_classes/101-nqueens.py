@@ -28,76 +28,116 @@ def generate_matrix(size):
     """
     matrix = [[0] * size for _ in range(size)]
     return matrix
-
-
-ld = [0] * (N*N)
-rd = [0] * (N*N)
-cl = [0] * (N*N)
- 
-def printSolution(board):
-    for i in range(N):
-        for j in range(N):
-            print(board[i][j], end=" ")
+# Print the board
+def print_board(board, n):
+    for i in range(n):
+        for j in range(n):
+            print(board[i][j], end = " ")
         print()
  
-def solveNQUtil(board, col):
+# Joining '.' and 'Q'
+# making combined 2D Array
+# For output in desired format
+def add_sol(board, ans, n):
+    temp = []
+    for i in range(n):
+        string = ""
+        for j in range(n):
+            string += board[i][j]
+        temp.append(string)
+    ans.append(temp)
+     
+     
+# We need to check in three directions
+# 1. in the same column above the current position
+# 2. in the left top diagonal from the given cell
+# 3. in the right top diagonal from the given cell
+def  is_safe(row, col, board, n):
+    x = row
+    y = col
+     
+    # Check for same upper col
+    while(x>=0):
+        if board[x][y] == "Q":
+            return False
+        else:
+            x -= 1
+             
+    # Check for Upper Right Diagonal
+    x = row
+    y = col
+    while(y<n and x>=0):
+        if board[x][y] == "Q":
+            return False
+        else:
+            y += 1
+            x -= 1
+             
+    # Check for Upper Left diagonal
+    x = row
+    y = col
+    while(y>=0 and x>=0):
+        if board[x][y] == "Q":
+            return False
+        else:
+            x -= 1
+            y -= 1
+    return True   
  
-    # Base case: If all queens are placed
-    # then return True
-    if (col >= N):
-        return True
  
-    # Consider this column and try placing
-    # this queen in all rows one by one
-    for i in range(N):
- 
-        # Check if the queen can be placed on board[i][col]
- 
-        # To check if a queen can be placed on
-        # board[row][col] We just need to check
-        # ld[row-col+n-1] and rd[row+coln]
-        # where ld and rd are for left and
-        # right diagonal respectively
-        if ((ld[i - col + N - 1] != 1 and
-             rd[i + col] != 1) and cl[i] != 1):
- 
-            # Place this queen in board[i][col]
-            board[i][col] = 1
-            ld[i - col + N - 1] = rd[i + col] = cl[i] = 1
- 
-            # Recur to place rest of the queens
-            if (solveNQUtil(board, col + 1)):
-                return True
- 
-            # If placing queen in board[i][col]
-            # doesn't lead to a solution,
-            # then remove queen from board[i][col]
-            board[i][col] = 0  # BACKTRACK
-            ld[i - col + N - 1] = rd[i + col] = cl[i] = 0
- 
-            # If the queen cannot be placed in
-            # any row in this column col then return False
-    return False
- 
- 
-# This function solves the N Queen problem using
-# Backtracking. It mainly uses solveNQUtil() to
-# solve the problem. It returns False if queens
-# cannot be placed, otherwise, return True and
-# prints placement of queens in the form of 1s.
-# Please note that there may be more than one
-# solutions, this function prints one of the
-# feasible solutions.
-def solveNQ():
-    board = generate_matrix(N)
-    for i in range(N):
-        print(i, N)
-        if (solveNQUtil(board, i) == False):
-            continue
-        printSolution(board)
-        print()
+# Function to solve n queens
+# solveNQueens function here will fill the queens
+# 1. there can be only one queen in one row
+# 2. if we filled the final row in the board then row will
+# be equal to total number of rows in board
+# 3. push that board configuration in answer set because
+# there will be more than one answers for filling the board
+# with n-queens
+def solveNQueens(row, ans, board, n):
+     
+    # Base Case
+    # Queen is depicted by "Q"
+    # adding solution to final answer array
+    if row == n:
+        add_sol(board, ans, n)
+        return
+     
+    # Solve 1 case and rest recursion will follow
+    for col in range(n):
+         
+        # For each position check if it is safe and if it
+        # is safe make a recursive call with
+        # row+1, board[i][j]='Q' and then revert the change
+        # in board that is make the board[i][j]='.' again to
+        # generate more solutions
+        if is_safe(row, col, board, n):
+             
+            # If placing Queen is safe
+            board[row][col] = "Q"
+            solveNQueens(row+1, ans, board, n)
+             
+            # Backtrack
+            board[row][col] = "."
  
  
 # Driver Code
-if __name__ == '__main__':
-    solveNQ()
+if __name__ == "__main__":
+     
+     
+    # 2D array of string will make our board
+    # which is initially all empty
+    board = [["." for i in range(N)] for j in range(N)]
+     
+    # Store all the possible answers
+    ans = []
+    solveNQueens(0, ans, board, N)
+     
+    if ans == []:
+        print("Solution does not exist")
+    else:
+        print(len(ans))
+        print(f"Out Of {len(ans)} solutions one is following")
+        for i in ans:
+            print_board(i, N)
+         
+    # This code is contributed by Priyank Namdeo
