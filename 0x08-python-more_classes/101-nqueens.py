@@ -105,7 +105,7 @@ if __name__ == "__main__":
     solveNQueens(0, ans, board, N)
 
     if len(ans) == 0:
-        print()
+        pass
     else:
         for i in ans:
             print(create_list(i, N))
