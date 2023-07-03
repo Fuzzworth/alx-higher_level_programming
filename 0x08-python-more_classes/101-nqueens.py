@@ -96,6 +96,7 @@ def solveNQueens(row, ans, board, n):
 
             board[row][col] = "."
 
+
 if __name__ == "__main__":
 
     board = generate_matrix(N)
