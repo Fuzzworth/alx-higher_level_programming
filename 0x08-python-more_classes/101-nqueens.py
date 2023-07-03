@@ -2,6 +2,10 @@
 """
 The N queens puzzle is the challenge of placing N non-attacking queens
 on an N×N chessboard. Write a program that solves the N queens problem.
+
+Notes:
+    credit to geeks for geeks for the algo and explanation
+    https://www.geeksforgeeks.org/n-queen-problem-backtracking-3/
 """
 import sys
 
