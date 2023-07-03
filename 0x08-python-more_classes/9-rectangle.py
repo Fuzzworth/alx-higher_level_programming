@@ -148,7 +148,8 @@ class Rectangle:
             return rect_2
         else:
             return rect_1
-
+    
+    @classmethod
     def square(cls, size=0):
         """
         returns a new Rectangle isinstance
