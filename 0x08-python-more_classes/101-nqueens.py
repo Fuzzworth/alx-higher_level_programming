@@ -91,6 +91,7 @@ def solveNQUtil(board, col):
 def solveNQ():
     board = generate_matrix(N)
     for i in range(N):
+        print(i, N)
         if (solveNQUtil(board, i) == False):
             continue
         printSolution(board)
