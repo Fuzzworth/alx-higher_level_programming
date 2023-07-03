@@ -90,11 +90,11 @@ def solveNQUtil(board, col):
 # feasible solutions.
 def solveNQ():
     board = generate_matrix(N)
-    if (solveNQUtil(board, 0) == False):
-        printf("Solution does not exist")
-        return False
-    printSolution(board)
-    return True
+    for i in range(N):
+        if (solveNQUtil(board, i) == False):
+            continue
+        printSolution(board)
+        print()
  
  
 # Driver Code
