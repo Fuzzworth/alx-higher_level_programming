@@ -8,7 +8,7 @@ if len(sys.argv) != 2:
 try:
     N = sys.argv[1]
     N = int(N)
-except TypeError:
+except ValueError:
     print("N must be a number")
     exit(1)
 
@@ -88,12 +88,9 @@ def solveNQueens(row, ans, board, n):
         return
 
     for col in range(n):
-
         if is_safe(row, col, board, n):
-
             board[row][col] = "Q"
             solveNQueens(row + 1, ans, board, n)
-
             board[row][col] = "."
 
 
