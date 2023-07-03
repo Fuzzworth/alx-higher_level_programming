@@ -72,7 +72,7 @@ def is_safe(row, col, board, n):
 
     x = row
     y = col
-    while(y >= 0 and x >= 0):
+    while (y >= 0 and x >= 0):
         if board[x][y] == "Q":
             return False
         else:
