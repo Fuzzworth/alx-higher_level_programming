@@ -139,5 +139,6 @@ if __name__ == "__main__":
         print(f"Out Of {len(ans)} solutions one is following")
         for i in ans:
             print_board(i, N)
+            print()
          
     # This code is contributed by Priyank Namdeo
