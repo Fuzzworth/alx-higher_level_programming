@@ -26,7 +26,7 @@ def generate_matrix(size):
     Returns:
         list: A square matrix with dimensions `size x size` filled with 0 values.
     """
-    matrix = [[0] * size for _ in range(size)]
+    matrix = ["." * size for _ in range(size)]
     return matrix
 # Print the board
 def print_board(board, n):
