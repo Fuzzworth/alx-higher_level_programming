@@ -25,7 +25,8 @@ def generate_matrix(size):
         size (int): The size of the square matrix.
 
     Returns:
-        list: A square matrix with dimensions `size x size` filled with 0 values.
+        list: A square matrix with dimensions `size x size`
+        filled with 0 values.
     """
     matrix = [["." for i in range(size)] for j in range(size)]
     return matrix
