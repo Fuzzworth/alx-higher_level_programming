@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+The N queens puzzle is the challenge of placing N non-attacking queens
+on an N×N chessboard. Write a program that solves the N queens problem.
+"""
 import sys
 
 
@@ -19,61 +23,71 @@ if N < 4:
 
 def generate_matrix(size):
     """
-    Generates a square matrix with 0 values.
+    Generates a square matrix with "." values.
 
     Args:
         size (int): The size of the square matrix.
 
     Returns:
         list: A square matrix with dimensions `size x size`
-        filled with 0 values.
+        filled with "." values.
     """
     matrix = [["." for i in range(size)] for j in range(size)]
     return matrix
 
 
-def create_list(board, n):
+def create_list(board, N):
+    """
+    Creates a List from the Matrix
+
+    Args:
+        board: Matrix
+        N: N
+
+    Returns:
+        list: list of positions
+    """
     matrix = []
-    for i in range(n):
-        for j in range(n):
-            if board[i][j] == "Q":
+    for i in range(N):
+        for j in range(N):
+            if board[i][j] == "X":
                 matrix.append([i, j])
     return matrix
 
 
-def add_sol(board, ans, n):
+def add_sol(board, results_list, N):
     temp = []
-    for i in range(n):
+    for i in range(N):
         string = ""
-        for j in range(n):
+        for j in range(N):
             string += board[i][j]
         temp.append(string)
-    ans.append(temp)
+    results_list.append(temp)
 
 
-def is_safe(row, col, board, n):
+def is_safe(row, column, board, N):
     x = row
-    y = col
+    y = column
 
     while x >= 0:
-        if board[x][y] == "Q":
+        if board[x][y] == "X":
             return False
         else:
             x -= 1
 
     x = row
-    y = col
-    while (y < n and x >= 0):
-        if board[x][y] == "Q":
+    y = column
+    while (y < N and x >= 0):
+        if board[x][y] == "X":
             return False
         else:
             y += 1
             x -= 1
 
     x = row
-    y = col
+    y = column
     while (y >= 0 and x >= 0):
-        if board[x][y] == "Q":
+        if board[x][y] == "X":
             return False
         else:
             x -= 1
@@ -81,28 +95,25 @@ def is_safe(row, col, board, n):
     return True
 
 
-def solveNQueens(row, ans, board, n):
-
-    if row == n:
-        add_sol(board, ans, n)
+def NQueens(row, results_list, board, N):
+    if row == N:
+        add_sol(board, results_list, N)
         return
 
-    for col in range(n):
-        if is_safe(row, col, board, n):
-            board[row][col] = "Q"
-            solveNQueens(row + 1, ans, board, n)
-            board[row][col] = "."
+    for column in range(N):
+        if is_safe(row, column, board, N):
+            board[row][column] = "X"
+            NQueens(row + 1, results_list, board, N)
+            board[row][column] = "."
 
 
 if __name__ == "__main__":
 
     board = generate_matrix(N)
 
-    ans = []
-    solveNQueens(0, ans, board, N)
+    results_list = []
+    NQueens(0, results_list, board, N)
 
-    if len(ans) == 0:
-        pass
-    else:
-        for i in ans:
+    if len(results_list) != 0:
+        for i in results_list:
             print(create_list(i, N))
