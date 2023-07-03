@@ -126,7 +126,7 @@ if __name__ == "__main__":
      
     # 2D array of string will make our board
     # which is initially all empty
-    board = [["." for i in range(N)] for j in range(N)]
+    board = generate_matrix(N)
      
     # Store all the possible answers
     ans = []
