@@ -55,7 +55,15 @@ def create_list(board, N):
     return matrix
 
 
-def add_sol(board, results_list, N):
+def add_to_results(board, results_list, N):
+    """
+    Add solution to results
+
+    Args:
+        board (list): board
+        results_list (list): list of results
+        N (int): N
+    """
     temp = []
     for row in range(N):
         string = ""
@@ -66,6 +74,18 @@ def add_sol(board, results_list, N):
 
 
 def is_safe(row, column, board, N):
+    """
+    Checks If addition is safe
+
+    Args:
+        row (int): row
+        column (int): column
+        board (list): board
+        N (int): N
+
+    Returns:
+        bool: True if safe False if not
+    """
     x = row
     y = column
 
@@ -96,8 +116,17 @@ def is_safe(row, column, board, N):
 
 
 def NQueens(row, results_list, board, N):
+    """
+    Recursive function to solve NQueens
+
+    Args:
+        row (int): row
+        results_list (list): results_list
+        board (list): board
+        N (int): N
+    """
     if row == N:
-        add_sol(board, results_list, N)
+        add_to_results(board, results_list, N)
         return
 
     for column in range(N):
