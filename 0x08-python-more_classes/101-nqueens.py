@@ -30,12 +30,12 @@ def generate_matrix(size):
     return matrix
 # Print the board
 def print_board(board, n):
-    matrix = []
+    matrix []
     for i in range(n):
         for j in range(n):
             if board[i][j] == "Q":
-                print("[{},{}]".format(i, j), end=",")
-    print()
+                matrix.append([i, j])
+    return matrix
  
 # Joining '.' and 'Q'
 # making combined 2D Array
@@ -140,7 +140,6 @@ if __name__ == "__main__":
         print(len(ans))
         print(f"Out Of {len(ans)} solutions one is following")
         for i in ans:
-            print_board(i, N)
-            print()
+            print(print_board(i, N))
          
     # This code is contributed by Priyank Namdeo
