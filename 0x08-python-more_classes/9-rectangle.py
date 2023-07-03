@@ -157,4 +157,4 @@ class Rectangle:
             size (int): int size
         """
 
-        return Rectangle(size, size)
+        return cls(size, size)
