@@ -30,7 +30,7 @@ def generate_matrix(size):
     return matrix
 # Print the board
 def print_board(board, n):
-    matrix []
+    matrix = []
     for i in range(n):
         for j in range(n):
             if board[i][j] == "Q":
