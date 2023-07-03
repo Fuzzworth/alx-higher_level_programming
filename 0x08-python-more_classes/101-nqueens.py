@@ -34,7 +34,7 @@ def print_board(board, n):
     for i in range(n):
         for j in range(n):
             if board[i][j] == "Q":
-                matrix.append(list(i, j)
+                matrix.append(list(i, j))
     return matrix
  
 # Joining '.' and 'Q'
