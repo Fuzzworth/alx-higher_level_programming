@@ -32,7 +32,8 @@ def generate_matrix(size):
 def print_board(board, n):
     for i in range(n):
         for j in range(n):
-            print(board[i][j], end = " ")
+            if board[i][j] == "Q":
+                print("[{},{}]".format(i, j), end=",")
         print()
  
 # Joining '.' and 'Q'
