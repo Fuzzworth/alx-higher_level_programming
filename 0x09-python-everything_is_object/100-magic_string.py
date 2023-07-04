@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-num = 0
+string = ""
 def magic_string():
-    return ", ".join(["BestSchool"] * (num++))
+    return string += "BestSchool"
