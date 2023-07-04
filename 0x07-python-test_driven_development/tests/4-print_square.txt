@@ -12,11 +12,20 @@ This is an example text file in reStructuredText format.  First import
 	>>> size_negative_num = -4
 	>>> size_bad_type = 4.0
 	>>> size_float_less_than_zero = -3.0
-	>>> print_square(size_goodo)
+	>>> print_square(size_good)
 	####
 	####
 	####
 	####
 	>>> print_square(size_negative_num)
+	Traceback (most recent call last):
+	...
+	ValueError: size must be >= 0
 	>>> print_square(size_bad_type)
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
 	>>> print_square(size_float_less_than_zero)
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
