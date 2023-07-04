@@ -13,7 +13,7 @@ This is an example text file in reStructuredText format.  First import
 	>>> add_integer()
 	Traceback (most recent call last):
 	...
-	TypeError: a must be an integer
+	TypeError: add_integer() missing 1 required positional argument: 'a'
 
 	>>> add_integer(None)
 	Traceback (most recent call last):
