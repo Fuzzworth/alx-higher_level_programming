@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+a = []
 def magic_string():
-    global a = []
-    a.append("BestSchool"); return ", ".join(a)
+    a.append("BestSchool")
+    return ", ".join(a)
