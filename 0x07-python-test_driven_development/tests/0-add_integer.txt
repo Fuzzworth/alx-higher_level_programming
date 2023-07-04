@@ -20,8 +20,8 @@ This is an example text file in reStructuredText format.  First import
 	...
 	TypeError: a must be an integer
 
-    	>>> add_integer(1)
-    	99
+	>>> add_integer(1)
+	99
 
 	>>> add_integer(1, 2)
 	3
@@ -33,8 +33,13 @@ This is an example text file in reStructuredText format.  First import
 	Traceback (most recent call last):
 	...
 	TypeError: a must be an integer
-	
+
 	>>> add_integer(1, "string")
 	Traceback (most recent call last):
 	...
 	TypeError: b must be an integer
+
+	>>> add_integer("1", "2")
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
