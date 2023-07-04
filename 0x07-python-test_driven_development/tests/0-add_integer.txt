@@ -23,6 +23,9 @@ This is an example text file in reStructuredText format.  First import
 	>>> add_integer(1)
 	99
 
+	>>> add_integer(1.0)
+	99
+
 	>>> add_integer(1, 2)
 	3
 
