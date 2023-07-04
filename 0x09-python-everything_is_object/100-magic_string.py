@@ -1,4 +1,5 @@
 #!/usr/bin/python3
-s if s == "BestSchool" else s += ", BestSchool"; s
+a = []
 def magic_string():
-    return s
+    a.append("BestSchool")
+    return ", ".join(a) 
