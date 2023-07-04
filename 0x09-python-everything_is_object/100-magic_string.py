@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-s = "BestSchool"
+s if s == "BestSchool" else s += ", BestSchool"; s
 def magic_string():
-    return s if s == "BestSchool" else s += ", BestSchool"; s
+    return s
