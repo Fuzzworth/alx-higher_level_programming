@@ -1,3 +1,3 @@
 #!/usr/bin/python3
 def magic_string():
-    return "BestSchool"
+    return ", ".join(["BestSchool"] * 7)
