@@ -8,6 +8,38 @@ This is an example text file in reStructuredText format.  First import
 ``matrix_divided`` from the ``2-matrix_divided`` module:
 
 	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+	>>> matrix = [
+	...     [1, 2, 3],
+	...     [4, 5, 6]
+	... ]
 
+	>>> none_matrix = None
+	>>> empty_matrix = []
+	>>> empty_empty_matrix = [[], []]
+	>>> mixed_ok_matrix = [
+	...	[1, 2.0, 3],
+	...	[4.0, 5, 6.0]
+	...]
+	>>> mixed_bad_matrix = [
+	...	[1 + 2j, 2.0, "3"],
+	...	[4.0, "5", 6.0]
+	...]
 	Now use it:
+	>>> matrix_divide()
+	>>> matrix_divide()
+	>>> matrix_divide()
+	>>> matrix_divide()
+	>>> matrix_divide()
+	>>> matrix_divide()
+	>>> matrix_divide()
+	>>> matrix_divide()
+	>>> matrix_divide()
+	>>> matrix_divide()
+	>>> matrix_divide()
+	>>> matrix_divide()
+	>>> matrix_divide()
+	>>> matrix_divide()
+	>>> matrix_divide()
+	>>> matrix_divide()
+	>>> matrix_divide()
 	>>> matrix_divide()
