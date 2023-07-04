@@ -16,19 +16,71 @@ This is an example text file in reStructuredText format.  First import
 	>>> last_name_none = None
 	>>> last_name_bad_type = 222
 	>>> last_name_empty = ""
+	>>> say_my_name(first_name_good)
+	My name is John 
+	>>> say_my_name(first_name_none)
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+	>>> say_my_name(first_name_bad_type)
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+	>>> say_my_name(first_name_empty)
+	My name is  
 	>>> say_my_name(first_name_good, last_name_good)
+	My name is John Smith
 	>>> say_my_name(first_name_good, last_name_none)
+	Traceback (most recent call last):
+	...
+	TypeError: last_name must be a string
 	>>> say_my_name(first_name_good, last_name_bad_type)
+	Traceback (most recent call last):
+	...
+	TypeError: last_name must be a string
 	>>> say_my_name(first_name_good, last_name_empty)
+	My name is John 
 	>>> say_my_name(first_name_none, last_name_good)
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
 	>>> say_my_name(first_name_none, last_name_none)
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
 	>>> say_my_name(first_name_none, last_name_bad_type)
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
 	>>> say_my_name(first_name_none, last_name_empty)
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
 	>>> say_my_name(first_name_bad_type, last_name_good)
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
 	>>> say_my_name(first_name_bad_type, last_name_none)
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
 	>>> say_my_name(first_name_bad_type, last_name_bad_type)
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
 	>>> say_my_name(first_name_bad_type, last_name_empty)
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
 	>>> say_my_name(first_name_empty, last_name_good)
+	My name is  Smith
 	>>> say_my_name(first_name_empty, last_name_none)
+	Traceback (most recent call last):
+	...
+	TypeError: last_name must be a string
 	>>> say_my_name(first_name_empty, last_name_bad_type)
-	>>> say_my_name(first_name_empty, last_name_empty)	
+	Traceback (most recent call last):
+	...
+	TypeError: last_name must be a string
+	>>> say_my_name(first_name_empty, last_name_empty)
+	My name is  
