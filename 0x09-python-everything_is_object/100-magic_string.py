@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-i += 1
+s = "BestSchool"
 def magic_string():
-    return ", ".join(["BestSchool"] * 7)
+    return s if s == "BestSchool" else s += ", BestSchool"; s
