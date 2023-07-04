@@ -1,0 +1,22 @@
+The ``4-print_square`` module
+======================
+
+Using ``print_square``
+-------------------
+
+This is an example text file in reStructuredText format.  First import
+``print_square`` from the ``4-print_square`` module:
+
+	>>> print_square = __import__('4-print_square').print_square
+	>>> size_good = 4
+	>>> size_negative_num = -4
+	>>> size_bad_type = 4.0
+	>>> size_float_less_than_zero = -3.0
+	>>> print_square(size_goodo)
+	####
+	####
+	####
+	####
+	>>> print_square(size_negative_num)
+	>>> print_square(size_bad_type)
+	>>> print_square(size_float_less_than_zero)
