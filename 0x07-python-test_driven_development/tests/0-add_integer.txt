@@ -10,6 +10,11 @@ This is an example text file in reStructuredText format.  First import
 	>>> add_integer = __import__('0-add_integer').add_integer
 
 	Now use it:
+	>>> add_integer()
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
 	>>> add_integer(None)
 	Traceback (most recent call last):
 	...
