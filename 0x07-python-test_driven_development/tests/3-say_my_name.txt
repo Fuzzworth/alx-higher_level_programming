@@ -1,0 +1,34 @@
+The ``3-say_my_name`` module
+======================
+
+Using ``say_my_name``
+-------------------
+
+This is an example text file in reStructuredText format.  First import
+``say_my_name`` from the ``3-say_my_name`` module:
+
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+	>>> first_name_good = "John"
+	>>> first_name_none = None
+	>>> first_name_bad_type = 111
+	>>> first_name_empty = ""
+	>>> last_name_good = "Smith"
+	>>> last_name_none = None
+	>>> last_name_bad_type = 222
+	>>> last_name_empty = ""
+	>>> say_my_name(first_name_good, last_name_good)
+	>>> say_my_name(first_name_good, last_name_none)
+	>>> say_my_name(first_name_good, last_name_bad_type)
+	>>> say_my_name(first_name_good, last_name_empty)
+	>>> say_my_name(first_name_none, last_name_good)
+	>>> say_my_name(first_name_none, last_name_none)
+	>>> say_my_name(first_name_none, last_name_bad_type)
+	>>> say_my_name(first_name_none, last_name_empty)
+	>>> say_my_name(first_name_bad_type, last_name_good)
+	>>> say_my_name(first_name_bad_type, last_name_none)
+	>>> say_my_name(first_name_bad_type, last_name_bad_type)
+	>>> say_my_name(first_name_bad_type, last_name_empty)
+	>>> say_my_name(first_name_empty, last_name_good)
+	>>> say_my_name(first_name_empty, last_name_none)
+	>>> say_my_name(first_name_empty, last_name_bad_type)
+	>>> say_my_name(first_name_empty, last_name_empty)	
