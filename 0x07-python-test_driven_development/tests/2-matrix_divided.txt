@@ -30,41 +30,138 @@ This is an example text file in reStructuredText format.  First import
 	...
 	TypeError: div must be a number
 	>>> matrix_divided(matrix, div_incorect_value_int)
+	[[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0]]
 	>>> matrix_divided(matrix, div_incorect_value_float)
+	[[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0]]
 	>>> matrix_divided(matrix, div_zero)
+	Traceback (most recent call last):
+	...
+	ZeroDivisionError: division by zero
 	>>> matrix_divided(none_matrix, div_correct_int)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
 	>>> matrix_divided(none_matrix, div_correct_float)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
 	>>> matrix_divided(none_matrix, div_incorect_type)
+	Traceback (most recent call last):
+	...
+	TypeError: div must be a number
 	>>> matrix_divided(none_matrix, div_incorect_value_int)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
 	>>> matrix_divided(none_matrix, div_incorect_value_float)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
 	>>> matrix_divided(none_matrix, div_zero)
+	Traceback (most recent call last):
+	...
+	ZeroDivisionError: division by zero
 	>>> matrix_divided(empty_matrix, div_correct_int)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
 	>>> matrix_divided(empty_matrix, div_correct_float)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
 	>>> matrix_divided(empty_matrix, div_incorect_type)
+	Traceback (most recent call last):
+	...
+	TypeError: div must be a number
 	>>> matrix_divided(empty_matrix, div_incorect_value_int)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
 	>>> matrix_divided(empty_matrix, div_incorect_value_float)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
 	>>> matrix_divided(empty_matrix, div_zero)
+	Traceback (most recent call last):
+	...
+	ZeroDivisionError: division by zero
 	>>> matrix_divided(empty_empty_matrix, div_correct_int)
+	[[], []]
 	>>> matrix_divided(empty_empty_matrix, div_correct_float)
+	[[], []]
 	>>> matrix_divided(empty_empty_matrix, div_incorect_type)
+	Traceback (most recent call last):
+	...
+	TypeError: div must be a number
 	>>> matrix_divided(empty_empty_matrix, div_incorect_value_int)
+	[[], []]
 	>>> matrix_divided(empty_empty_matrix, div_incorect_value_float)
+	[[], []]
 	>>> matrix_divided(empty_empty_matrix, div_zero)
+	Traceback (most recent call last):
+	...
+	ZeroDivisionError: division by zero
 	>>> matrix_divided(mixed_ok_matrix, div_correct_int)
+	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
 	>>> matrix_divided(mixed_ok_matrix, div_correct_float)
+	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
 	>>> matrix_divided(mixed_ok_matrix, div_incorect_type)
+	Traceback (most recent call last):
+	...
+	TypeError: div must be a number
 	>>> matrix_divided(mixed_ok_matrix, div_incorect_value_int)
+	[[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0]]
 	>>> matrix_divided(mixed_ok_matrix, div_incorect_value_float)
+	[[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0]]
 	>>> matrix_divided(mixed_ok_matrix, div_zero)
+	Traceback (most recent call last):
+	...
+	ZeroDivisionError: division by zero
 	>>> matrix_divided(mixed_bad_matrix, div_correct_int)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
 	>>> matrix_divided(mixed_bad_matrix, div_correct_float)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
 	>>> matrix_divided(mixed_bad_matrix, div_incorect_type)
+	Traceback (most recent call last):
+	...
+	TypeError: div must be a number
 	>>> matrix_divided(mixed_bad_matrix, div_incorect_value_int)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
 	>>> matrix_divided(mixed_bad_matrix, div_incorect_value_float)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
 	>>> matrix_divided(mixed_bad_matrix, div_zero)
+	Traceback (most recent call last):
+	...
+	ZeroDivisionError: division by zero
 	>>> matrix_divided(mixed_size_matrix, div_correct_int)
+	Traceback (most recent call last):
+	...
+	TypeError: Each row of the matrix must have the same size
 	>>> matrix_divided(mixed_size_matrix, div_correct_float)
+	Traceback (most recent call last):
+	...
+	TypeError: Each row of the matrix must have the same size
 	>>> matrix_divided(mixed_size_matrix, div_incorect_type)
+	Traceback (most recent call last):
+	...
+	TypeError: div must be a number
 	>>> matrix_divided(mixed_size_matrix, div_incorect_value_int)
+	Traceback (most recent call last):
+	...
+	TypeError: Each row of the matrix must have the same size
 	>>> matrix_divided(mixed_size_matrix, div_incorect_value_float)
-	>>> matrix_divided(mixed_size_matrix, div_zero)	
+	Traceback (most recent call last):
+	...
+	TypeError: Each row of the matrix must have the same size
+	>>> matrix_divided(mixed_size_matrix, div_zero)
+	Traceback (most recent call last):
+	...
+	ZeroDivisionError: division by zero
