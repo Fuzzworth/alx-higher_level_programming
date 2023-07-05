@@ -23,7 +23,7 @@ def text_indentation(text):
 
         if (ord(text[i]) == ord(".") or ord(text[i]) == ord("?") or ord(text[i]) == ord(":")):
             none_found = False
-            string_to_print = text[start:i].strip()
+            string_to_print = text[start:i + 1].strip()
             print(f"{string_to_print}\n\n", end="")
             if (i + 1) <= (len(text) - 1):
                 start = i + 1
