@@ -19,12 +19,10 @@ def text_indentation(text):
         raise TypeError("text must be a string")
     none_found = True
     start = 0
-    special = 0
     for i in range(len(text)):
 
         if (ord(text[i]) == ord(".") or ord(text[i]) == ord("?") or ord(text[i]) == ord(":")):
             none_found = False
-            special = i
             string_to_print = text[start:i].strip()
             print(f"{string_to_print}\n\n", end="")
             if (i + 1) <= (len(text) - 1):
