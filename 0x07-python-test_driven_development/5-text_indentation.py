@@ -17,9 +17,17 @@ def text_indentation(text):
 
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    for i in text:
+    none_found = True
+    start = 0
+    special = 0
+    for i in range(len(text)):
+
         if (ord(i) == ord(".") or ord(i) == ord("?") or ord(i) == ord(":")):
-            print(i, end="")
-            print("\n\n", end="")
-            continue
-        print(i, end="")
+            none_found = False
+            special = i
+            string_to_print = strip(text[start:i])
+            print(f"{string_to_print}\n\n", end="")
+            if (i + 1) <= (len(text) - 1):
+                start = i + 1
+    if none_found:
+        print(strip(text))
