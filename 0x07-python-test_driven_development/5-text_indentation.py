@@ -25,9 +25,9 @@ def text_indentation(text):
         if (ord(text[i]) == ord(".") or ord(text[i]) == ord("?") or ord(text[i]) == ord(":")):
             none_found = False
             special = i
-            string_to_print = strip(text[start:i])
+            string_to_print = text[start:i].strip()
             print(f"{string_to_print}\n\n", end="")
             if (i + 1) <= (len(text) - 1):
                 start = i + 1
     if none_found:
-        print(strip(text))
+        print(text.strip())
