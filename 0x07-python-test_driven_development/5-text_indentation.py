@@ -29,3 +29,5 @@ def text_indentation(text):
                 start = i + 1
     if none_found:
         print(text.strip(), end="")
+    else:
+        print(text[start].split, end="")
