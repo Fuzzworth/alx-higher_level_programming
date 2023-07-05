@@ -22,7 +22,7 @@ def text_indentation(text):
     special = 0
     for i in range(len(text)):
 
-        if (ord(i) == ord(".") or ord(i) == ord("?") or ord(i) == ord(":")):
+        if (ord(text[i]) == ord(".") or ord(text[i]) == ord("?") or ord(text[i]) == ord(":")):
             none_found = False
             special = i
             string_to_print = strip(text[start:i])
