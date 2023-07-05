@@ -42,3 +42,19 @@ This is an example text file in reStructuredText format.  First import
 	Traceback (most recent call last):
 	...
 	TypeError: text must be a string
+	>>> text_indentation(".?:")
+	.
+	<BLANKLINE>
+	?
+	<BLANKLINE>
+	:
+	<BLANKLINE>
+	>>> text_indentation("")
+	>>> text_indentation("""Line number 1
+	... <BLANKLINE>
+	... This is another line
+	... Once again""")
+	Line number 1
+	<BLANKLINE>
+	This is another line
+	Once again
