@@ -42,11 +42,11 @@ def matrix_mul(m_a, m_b):
     size_b = len(m_b[0])
     result = []
     for i in range(len(m_a)):
-        if len(m_a[i] != size_a):
+        if len(m_a[i]) != size_a:
             raise ValueError("each row of m_a must be of the same size")
         result.append([0] * len(m_b[0]))
         for j in range(len(m_b[0])):
-            if len(m_b[j] != size_b):
+            if len(m_b[j]) != size_b:
                 raise ValueError("each row of m_b must be of the same size")
             for k in range(len(m_b)):
                 if not isinstance(m_a[i][k], (int, float)):
