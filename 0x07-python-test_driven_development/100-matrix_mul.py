@@ -47,7 +47,7 @@ def matrix_mul(m_a, m_b):
         result.append([0] * len(m_b[0]))
         for j in range(len(m_b[0])):
             for k in range(len(m_b)):
-                if len(m_b[j]) != size_b:
+                if len(m_b[k]) != size_b:
                     raise TypeError("each row of m_b must be of the same size")
                 if not isinstance(m_a[i][k], (int, float)):
                     raise TypeError("m_a should contain only integers or floats")
