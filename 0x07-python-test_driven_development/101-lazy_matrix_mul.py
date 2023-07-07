@@ -44,7 +44,6 @@ def lazy_matrix_mul(m_a, m_b):
     for i in range(len(m_a)):
         if len(m_a[i]) != size_a:
             raise TypeError("each row of m_a must be of the same size")
-        result.append([0] * len(m_b[0]))
         for j in range(len(m_b[0])):
             for k in range(len(m_b)):
                 if len(m_b[k]) != size_b:
