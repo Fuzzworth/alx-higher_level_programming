@@ -51,10 +51,10 @@ def matrix_mul(m_a, m_b):
                     raise TypeError("each row of m_b must be of the same size")
                 if not isinstance(m_a[i][k], (int, float)):
                     raise TypeError("m_a should contain only" +
-                                        "integers or floats")
+                                    "integers or floats")
                 if not isinstance(m_b[k][j], (int, float)):
                     raise TypeError("m_b should contain only" +
-                                        "integers or floats")
+                                    "integers or floats")
                 try:
                     result[i][j] += m_a[i][k] * m_b[k][j]
                 except Exception:
