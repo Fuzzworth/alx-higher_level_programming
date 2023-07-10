@@ -29,10 +29,10 @@ This is an example text file in reStructuredText format.  First import
 	<class 'function'>
 	>>> bg.__class__.area()
 	Traceback (most recent call last):
-	TypeError: BaseGeometry.area() missing 1 required positional argument: 'self'
+	TypeError: area() missing 1 required positional argument: 'self'
 	>>> bg.area(10)
 	Traceback (most recent call last):
-	TypeError: BaseGeometry.area() takes 1 positional argument but 2 were given
+	TypeError: area() takes 1 positional argument but 2 were given
 	>>> bg.area()
 	Traceback (most recent call last):
 	Exception: area() is not implemented
@@ -40,13 +40,13 @@ This is an example text file in reStructuredText format.  First import
 	<class 'function'>
 	>>> bg.__class__.integer_validator()
 	Traceback (most recent call last):
-	TypeError: BaseGeometry.integer_validator() missing 3 required positional arguments: 'self', 'name', and 'value'
+	TypeError: integer_validator() missing 3 required positional arguments: 'self', 'name', and 'value'
 	>>> bg.integer_validator()
 	Traceback (most recent call last):
-	TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 	>>> bg.integer_validator(1, 1, 1)
 	Traceback (most recent call last):
-	TypeError: BaseGeometry.integer_validator() takes 3 positional arguments but 4 were given
+	TypeError: integer_validator() takes 3 positional arguments but 4 were given
 	>>> bg.integer_validator("str", 5.5)
 	Traceback (most recent call last):
 	TypeError: str must be an integer
