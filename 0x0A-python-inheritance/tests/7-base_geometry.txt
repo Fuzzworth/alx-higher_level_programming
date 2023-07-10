@@ -53,3 +53,67 @@ This is an example text file in reStructuredText format.  First import
 	>>> bg.integer_validator("distance", -4)
 	Traceback (most recent call last):
 	ValueError: distance must be greater than 0
+	>>> bg.integer_validator("my_int", 12)
+	>>> bg.integer_validator("width", 89)
+	>>>
+	>>> try:
+	...     bg.integer_validator("name", "John")
+	... except Exception as e:
+	...     print("[{}] {}".format(e.__class__.__name__, e))
+	...
+	[TypeError] name must be an integer
+	>>> try:
+	...     bg.integer_validator("age", 0)
+	... except Exception as e:
+	...     print("[{}] {}".format(e.__class__.__name__, e))
+	...
+	[ValueError] age must be greater than 0
+	>>> try:
+	...     bg.integer_validator("distance", -4)
+	... except Exception as e:
+	...     print("[{}] {}".format(e.__class__.__name__, e))
+	...
+	[ValueError] distance must be greater than 0
+	>>> try:
+	...     bg.integer_validator("name", 3.5)
+	... except Exception as e:
+	...     print("[{}] {}".format(e.__class__.__name__, e))
+	...
+	[TypeError] name must be an integer
+	>>> try:
+	...     bg.integer_validator(34, 0)
+	... except Exception as e:
+	...     print("[{}] {}".format(e.__class__.__name__, e))
+	...
+	[ValueError] 34 must be greater than 0
+	>>> try:
+	...     bg.integer_validator("distance", -4)
+	... except Exception as e:
+	...     print("[{}] {}".format(e.__class__.__name__, e))
+	...
+	[ValueError] distance must be greater than 0
+	>>> try:
+	...     bg.integer_validator("distance", 100)
+	... except Exception as e:
+	...     print("[{}] {}".format(e.__class__.__name__, e))
+	...
+	>>> bg = BaseGeometry("leo")
+	Traceback (most recent call last):
+	...
+	TypeError: BaseGeometry() takes no arguments
+	>>> bg = BaseGeometry(23)
+	Traceback (most recent call last):
+	...
+	TypeError: BaseGeometry() takes no arguments
+	>>> bg = BaseGeometry()
+	>>> try:
+	...     bg.integer_validator(24, 24)
+	... except Exception as e:
+	...     print("[{}] {}".format(e.__class__.__name__, e))
+	... 
+	>>> try:
+	...     bg.integer_validator("leo", 24)
+	... except Exception as e:
+	...     print("[{}] {}".format(e.__class__.__name__, e))
+	... 
+	>>>
