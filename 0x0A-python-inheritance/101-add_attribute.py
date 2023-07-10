@@ -8,4 +8,7 @@ def add_attribute(a_class, att_name, att_value):
     """
     function docs
     """
-    eval("{}.{} = \"{}\"".format(a_class.__class__.__name__, att_name, att_value))
+    if a_class.__slots__:
+        raise TypeError("can't add new attribute")
+    else:
+        setattr(a_class, att_name, att_value)
