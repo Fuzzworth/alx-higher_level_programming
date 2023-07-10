@@ -11,5 +11,5 @@ class MyList(list):
         """
         prints a sorted list
         """
-        sorted_list = self.data.copy()
+        sorted_list = super().copy()
         print(sorted_list.sort())
