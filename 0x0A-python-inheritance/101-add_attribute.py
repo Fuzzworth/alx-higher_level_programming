@@ -8,7 +8,7 @@ def add_attribute(a_class, att_name, att_value):
     """
     function docs
     """
-    if '__slots__' in dir(a_class):
+    if not hasattr(obj, "__dict__"):
         raise TypeError("can't add new attribute")
     else:
         setattr(a_class, att_name, att_value)
