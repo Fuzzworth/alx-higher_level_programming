@@ -6,12 +6,12 @@ Module docs
 
 class BaseGeometry():
     """
-    class docs
+    My docs
     """
 
     def area(self):
         """
-        area Function
+        Function
 
         Raises:
             Exception: all the time
