@@ -14,10 +14,10 @@ class Square(Rectangle):
         constructor docs
         """
         self.__size = size
-        super().__init__(self, size, size)
+        super().__init__(size, size)
 
     def area(self):
         """
         area
         """
-        return self.__size * self.__size
+        return super().area()
