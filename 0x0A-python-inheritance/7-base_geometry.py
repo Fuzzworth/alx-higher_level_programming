@@ -4,7 +4,7 @@ Module docs
 """
 
 
-class BaseGeometry(object):
+class BaseGeometry:
     """
     class docs
     """
