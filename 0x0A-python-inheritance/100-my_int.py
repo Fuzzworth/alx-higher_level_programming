@@ -13,10 +13,10 @@ class MyInt(int):
         """
         naughty
         """
-        return self.x != other
+        return self.real != other
 
     def __ne__(self, other):
         """
         naughty
         """
-        return self.x == other
+        return self.real == other
