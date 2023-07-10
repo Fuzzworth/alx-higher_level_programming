@@ -1,0 +1,32 @@
+The ``7-base_geometry`` module
+======================
+
+Using ``BaseGeometry``
+-------------------
+
+This is an example text file in reStructuredText format.  First import
+``BaseGeometry`` from the ``7-base_geometry`` module:
+
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+	>>> area = BaseGeometry.area
+	>>> integer_validator = BaseGeopmetry.integer_validator
+	>>> mod_docs = __import__('7-base_geometry').__doc__
+	>>> class_docs = BaseGeometry.__doc__
+	>>> area_docs = area.__doc__
+	>>> int_docs = integer_validator.__doc__
+	>>> len(mod_docs) > 0
+	True
+	>>> len(class_docs) > 0
+	True
+	>>> len(area_docs) > 0
+	True
+	>>> len(int_docs) > 0
+	True
+	>>> bg = BaseGeometry()
+	>>> bg.area()
+	>>> bg.areag(1,2,3)
+	>>> bg.integer_validator()
+	>>> bg.integer_validator("hello", -1)
+	>>> bg.integer_validator("hello", 1, 2)
+	>>> bg.integer_validator("distance", 10)
+	>>> bg.integer_validator("bool", false)

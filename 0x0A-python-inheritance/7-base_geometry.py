@@ -10,11 +10,21 @@ class BaseGeometry(object):
     """
 
     def area(self):
+        """
+        area Function
+
+        Raises:
+            Exception: all the time
+        """
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
         """
         function doc
+
+        Raises:
+            TypeError: when not int
+            ValueError: when below 1
         """
 
         if type(value) is not int:
