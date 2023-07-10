@@ -22,6 +22,10 @@ class BaseGeometry(object):
         """
         function doc
 
+        Args:
+            name (str): string
+            value (int): intger
+
         Raises:
             TypeError: when not int
             ValueError: when below 1
