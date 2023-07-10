@@ -9,7 +9,7 @@ This is an example text file in reStructuredText format.  First import
 
 	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 	>>> area = BaseGeometry.area
-	>>> integer_validator = BaseGeopmetry.integer_validator
+	>>> integer_validator = BaseGeometry.integer_validator
 	>>> mod_docs = __import__('7-base_geometry').__doc__
 	>>> class_docs = BaseGeometry.__doc__
 	>>> area_docs = area.__doc__
