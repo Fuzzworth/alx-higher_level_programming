@@ -23,97 +23,61 @@ This is an example text file in reStructuredText format.  First import
 	>>> len(int_docs) > 0
 	True
 	>>> bg = BaseGeometry()
+	>>> type(bg) == BaseGeometry
+    	True
+	>>> type(BaseGeometry.__dict__['area'])
+	<class 'function'>
+	>>> bg.__class__.area()
+	Traceback (most recent call last):
+	TypeError: area() missing 1 required positional argument: 'self'
+	>>> bg.area(10)
+	Traceback (most recent call last):
+	TypeError: area() takes 1 positional argument but 2 were given
 	>>> bg.area()
 	Traceback (most recent call last):
 	Exception: area() is not implemented
-	>>> bg.area(1,2,3)
+	>>> type(BaseGeometry.__dict__['integer_validator'])
+	<class 'function'>
+	>>> bg.__class__.integer_validator()
 	Traceback (most recent call last):
-	TypeError: BaseGeometry.area() takes 1 positional argument but 4 were given
+	TypeError: integer_validator() missing 3 required positional arguments: 'self', 'name', and 'value'
 	>>> bg.integer_validator()
 	Traceback (most recent call last):
-	TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
-	>>> bg.integer_validator("hello")
+	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+	>>> bg.integer_validator(1, 1, 1)
 	Traceback (most recent call last):
-	TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
-	>>> bg.integer_validator("hello", 1, 100)
+	TypeError: integer_validator() takes 3 positional arguments but 4 were given
+	>>> bg.integer_validator("str", 5.5)
 	Traceback (most recent call last):
-	TypeError: BaseGeometry.integer_validator() takes 3 positional arguments but 4 were given
-	>>> bg.integer_validator("distance", 10)
-	>>> bg.integer_validator("bool", False)
+	TypeError: str must be an integer
+	>>> bg.integer_validator("str", 0.54)
 	Traceback (most recent call last):
-	TypeError: bool must be an integer
-	>>> bg.integer_validator("my_int", 12)
-	>>> bg.integer_validator("width", 89)
-	>>> bg.integer_validator("name", "John")
+	TypeError: str must be an integer
+	>>> bg.integer_validator("str", "str")
 	Traceback (most recent call last):
-	TypeError: name must be an integer
-	>>> bg.integer_validator("age", 0)
+	TypeError: str must be an integer
+	>>> bg.integer_validator("str", True)
 	Traceback (most recent call last):
-	ValueError: age must be greater than 0
-	>>> bg.integer_validator("distance", -4)
+	TypeError: str must be an integer
+	>>> bg.integer_validator("str", [51])
 	Traceback (most recent call last):
-	ValueError: distance must be greater than 0
-	>>> bg.integer_validator("my_int", 12)
-	>>> bg.integer_validator("width", 89)
-	>>>
-	>>> try:
-	...     bg.integer_validator("name", "John")
-	... except Exception as e:
-	...     print("[{}] {}".format(e.__class__.__name__, e))
-	...
-	[TypeError] name must be an integer
-	>>> try:
-	...     bg.integer_validator("age", 0)
-	... except Exception as e:
-	...     print("[{}] {}".format(e.__class__.__name__, e))
-	...
-	[ValueError] age must be greater than 0
-	>>> try:
-	...     bg.integer_validator("distance", -4)
-	... except Exception as e:
-	...     print("[{}] {}".format(e.__class__.__name__, e))
-	...
-	[ValueError] distance must be greater than 0
-	>>> try:
-	...     bg.integer_validator("name", 3.5)
-	... except Exception as e:
-	...     print("[{}] {}".format(e.__class__.__name__, e))
-	...
-	[TypeError] name must be an integer
-	>>> try:
-	...     bg.integer_validator(34, 0)
-	... except Exception as e:
-	...     print("[{}] {}".format(e.__class__.__name__, e))
-	...
-	[ValueError] 34 must be greater than 0
-	>>> try:
-	...     bg.integer_validator("distance", -4)
-	... except Exception as e:
-	...     print("[{}] {}".format(e.__class__.__name__, e))
-	...
-	[ValueError] distance must be greater than 0
-	>>> try:
-	...     bg.integer_validator("distance", 100)
-	... except Exception as e:
-	...     print("[{}] {}".format(e.__class__.__name__, e))
-	...
-	>>> bg = BaseGeometry("leo")
+	TypeError: str must be an integer
+	>>> bg.integer_validator("str", None)
 	Traceback (most recent call last):
-	...
-	TypeError: BaseGeometry() takes no arguments
-	>>> bg = BaseGeometry(23)
+	TypeError: str must be an integer
+	>>> bg.integer_validator("str", 0)
 	Traceback (most recent call last):
-	...
-	TypeError: BaseGeometry() takes no arguments
-	>>> bg = BaseGeometry()
-	>>> try:
-	...     bg.integer_validator(24, 24)
-	... except Exception as e:
-	...     print("[{}] {}".format(e.__class__.__name__, e))
-	... 
-	>>> try:
-	...     bg.integer_validator("leo", 24)
-	... except Exception as e:
-	...     print("[{}] {}".format(e.__class__.__name__, e))
-	... 
-	>>>
+	ValueError: str must be greater than 0
+	>>> bg.integer_validator("str", -1)
+	Traceback (most recent call last):
+	ValueError: str must be greater than 0
+	>>> bg.integer_validator("str", 8)
+	>>> bg.integer_validator("str", 50)
+	>>> bg.integer_validator("", 1)
+	>>> bg.integer_validator(None, 1)
+	>>> bg.integer_validator("str", (1, 2))
+	Traceback (most recent call last):
+	TypeError: str must be an integer
+	>>> bg.integer_validator("str", {3, 3})
+	Traceback (most recent call last):
+	TypeError: str must be an integer
