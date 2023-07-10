@@ -8,12 +8,12 @@ This is an example text file in reStructuredText format.  First import
 ``BaseGeometry`` from the ``7-base_geometry`` module:
 
 	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
-	>>> area = BaseGeometry.area
-	>>> integer_validator = BaseGeometry.integer_validator
+	>>> a = BaseGeometry.area
+	>>> iv = BaseGeometry.integer_validator
 	>>> mod_docs = __import__('7-base_geometry').__doc__
 	>>> class_docs = BaseGeometry.__doc__
-	>>> area_docs = area.__doc__
-	>>> int_docs = integer_validator.__doc__
+	>>> area_docs = a.__doc__
+	>>> int_docs = iv.__doc__
 	>>> len(mod_docs) > 0
 	True
 	>>> len(class_docs) > 0
