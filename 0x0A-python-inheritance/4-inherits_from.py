@@ -9,4 +9,4 @@ def inherits_from(obj, a_class):
     Function Doc
     """
 
-    return isinstance(obj, a_class)
+    return issubclass(obj, a_class)
