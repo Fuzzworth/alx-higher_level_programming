@@ -4,6 +4,7 @@ Module docs
 """
 import BaseGeometry
 
+
 class Rectangle(BaseGeometry):
     """
     class docs
