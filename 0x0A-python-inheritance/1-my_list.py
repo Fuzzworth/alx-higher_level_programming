@@ -9,7 +9,7 @@ class MyList(list):
     Module that inherits from list
     """
 
-    def __init__(self, iterable):
+    def __init__(self, iterable=[]):
         """
         init
 
