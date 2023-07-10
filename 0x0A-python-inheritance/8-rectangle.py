@@ -2,7 +2,7 @@
 """
 Module docs
 """
-import BaseGeometry
+import 7-base_geometry
 
 
 class Rectangle(BaseGeometry):
