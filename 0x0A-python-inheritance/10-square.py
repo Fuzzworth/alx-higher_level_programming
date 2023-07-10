@@ -13,6 +13,7 @@ class Square(Rectangle):
         """
         constructor docs
         """
+        super().integer_validator(size)
         self.__size = size
         super().__init__(size, size)
 
