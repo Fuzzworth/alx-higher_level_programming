@@ -43,4 +43,5 @@ def stats():
         print_stats(code_dict, total_size)
         raise e
 
+
 stats()
