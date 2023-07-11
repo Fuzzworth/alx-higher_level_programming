@@ -42,5 +42,5 @@ def stats():
     except KeyboardInterrupt:
         print_stats(code_dict, total_size)
 
-
-stats()
+if __name__ == __main__:
+    stats()
