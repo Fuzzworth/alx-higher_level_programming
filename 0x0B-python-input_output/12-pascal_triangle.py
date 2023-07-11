@@ -14,7 +14,7 @@ def pascal_triangle(n):
     for i in range(n):
         new_row = []
         num = 1
-        for j in range(i+1):
+        for j in range(1, i+1):
             num = num * (i - j) // j
             new_row.append(num)
         final_list.append(new_row)
