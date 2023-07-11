@@ -49,6 +49,7 @@ def stats():
             i += 1
     except (Exception, KeyboardInterrupt):
         print_stats(code_dict, total_size)
+        raise
 
 
 if __name__ == "__main__":
