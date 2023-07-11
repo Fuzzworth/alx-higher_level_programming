@@ -16,8 +16,6 @@ for line in sys.stdin:
         print(f"File size: {total_size}")
         for c in sorted_dict:
             print("{}: {}".format(c, sorted_dict[c]))
-        code_dict.clear()
-        total_size = 0
     stripped = line.split()
     file_size_index = 8
     status_code_index = 7
