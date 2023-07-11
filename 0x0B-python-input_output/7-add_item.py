@@ -18,7 +18,7 @@ def add_items():
     else:
         final_list = []
     for i in range(1, len(argv)):
-        final_list.append(argv[1])
+        final_list.append(argv[i])
     save_to_json_file(final_list, filename)
 
 
