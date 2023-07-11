@@ -15,7 +15,6 @@ if __name__ == '__main__':
         for c in sorted(code_dict):
             print("{}: {}".format(c, code_dict[c]))
     
-
     code_dict = {}
     total_size = 0
     file_size_index = 8
