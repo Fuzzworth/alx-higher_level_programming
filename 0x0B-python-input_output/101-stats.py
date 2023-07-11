@@ -11,8 +11,8 @@ total_size = 0
 for line in sys.stdin:
     if i != 0 and i % 10 == 0:
         print(f"File size: {total_size}")
-        for i in code_dict:
-            print("{}: {}".format(i, code_dict[i]))
+        for c in code_dict:
+            print("{}: {}".format(c, code_dict[c]))
         code_dict.clear()
         total_size = 0
     stripped = line.split()
