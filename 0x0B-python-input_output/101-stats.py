@@ -15,7 +15,7 @@ for line in sys.stdin:
             print("{}: {}".format(i, code_dict[i]))
         code_dict.clear()
         total_size = 0
-    stripped = line.strip(" ")
+    stripped = line.strip()
     for p in stripped:
         print(p)
     file_size_index = 5
