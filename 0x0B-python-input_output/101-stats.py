@@ -5,6 +5,13 @@ Module docs
 import sys
 
 
+i = 0
+code_dict = {}
+total_size = 0
+file_size_index = 8
+status_code_index = 7
+
+
 def print_stats(code_dict, total_size):
     """
     function doc
@@ -17,11 +24,6 @@ def print_stats(code_dict, total_size):
         print("{}: {}".format(c, sorted_dict[c]))
 
 
-i = 0
-code_dict = {}
-total_size = 0
-file_size_index = 8
-status_code_index = 7
 try:
     for line in sys.stdin:
         if i != 0 and i % 10 == 0:
