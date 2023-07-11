@@ -8,7 +8,7 @@ import sys
 i = 0
 code_dict = {}
 total_size = 0
-try:        
+try:
     for line in sys.stdin:
         if i != 0 and i % 10 == 0:
             myKeys = list(code_dict.keys())
