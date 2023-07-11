@@ -31,5 +31,5 @@ class Student:
         else:
             for i in attrs:
                 if i in self.__dict__:
-                    final_list[i]= self.__dict__[i]
+                    final_list[i] = self.__dict__[i]
         return final_list
