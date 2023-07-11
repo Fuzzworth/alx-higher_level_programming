@@ -23,7 +23,9 @@ if __name__ == '__main__':
     try:
         for line in sys.stdin:
             if i != 0 and i % 10 == 0:
-                print_stats(code_dict, total_size)
+                print("File size: {:d}".format(total_size))
+                for c in sorted(code_dict):
+                    print("{}: {}".format(c, code_dict[c]))
             stripped = line.split()
             try:
                 code = stripped[status_code_index]
@@ -40,7 +42,11 @@ if __name__ == '__main__':
                 raise
             total_size += file_size
             i += 1
-        print_stats(code_dict, total_size)
+        print("File size: {:d}".format(total_size))
+        for c in sorted(code_dict):
+                print("{}: {}".format(c, code_dict[c]))
     except (Exception, KeyboardInterrupt):
-        print_stats(code_dict, total_size)
+        print("File size: {:d}".format(total_size))
+        for c in sorted(code_dict):
+                print("{}: {}".format(c, code_dict[c]))
         raise
