@@ -5,6 +5,17 @@ Module docs
 import sys
 
 
+def print_stats(code_dict, total_size):
+    """
+    function doc
+    """
+    myKeys = list(code_dict.keys())
+    myKeys.sort()
+    sorted_dict = {p: code_dict[p] for p in myKeys}
+    print("File size: {:d}".format(total_size))
+    for c in sorted_dict:
+        print("{}: {}".format(c, sorted_dict[c]))
+    
 i = 0
 code_dict = {}
 total_size = 0
@@ -13,12 +24,7 @@ status_code_index = 7
 try:
     for line in sys.stdin:
         if i != 0 and i % 10 == 0:
-            myKeys = list(code_dict.keys())
-            myKeys.sort()
-            sorted_dict = {p: code_dict[p] for p in myKeys}
-            print("File size: {:d}".format(total_size))
-            for c in sorted_dict:
-                print("{}: {}".format(c, sorted_dict[c]))
+            print_stats(code_dict, total_size)
         stripped = line.split()
         code = int(stripped[status_code_index])
         if code in code_dict:
@@ -29,9 +35,4 @@ try:
         total_size += file_size
         i += 1
 except KeyboardInterrupt:
-    myKeys = list(code_dict.keys())
-    myKeys.sort()
-    sorted_dict = {p: code_dict[p] for p in myKeys}
-    print("File size: {:d}".format(total_size))
-    for c in sorted_dict:
-        print("{}: {}".format(c, sorted_dict[c]))
+    print_stats(code_dict, total_size)
