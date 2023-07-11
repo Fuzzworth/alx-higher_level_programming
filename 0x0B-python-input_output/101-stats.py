@@ -16,7 +16,8 @@ for line in sys.stdin:
         code_dict.clear()
         total_size = 0
     stripped = line.strip(" ")
-    print(stripped)
+    for p in stripped:
+        print(p)
     file_size_index = 5
     status_code_index = 4
     code = stripped[status_code_index]
