@@ -18,4 +18,3 @@ def pascal_triangle(n):
             num = num * (i - j) // j
             new_row.append(num)
         final_list.append(new_row)
-            
