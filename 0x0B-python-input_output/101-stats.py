@@ -12,6 +12,7 @@ def print_stats(code_dict, total_size):
     for c in sorted(code_dict):
         print("{}: {}".format(c, code_dict[c]))
 
+
 if __name__ == '__main__':
     import sys
 
