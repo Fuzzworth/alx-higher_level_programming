@@ -32,13 +32,19 @@ def stats():
             if i != 0 and i % 10 == 0:
                 print_stats(code_dict, total_size)
             stripped = line.split()
-            code = int(stripped[status_code_index])
+            try:
+                code = int(stripped[status_code_index])
+            except Exception:
+                pass
             if code in valid_index:
                 if code in code_dict:
                     code_dict[code] = code_dict[code] + 1
                 else:
                     code_dict[code] = 1
-            file_size = int(stripped[file_size_index])
+            try:
+                file_size = int(stripped[file_size_index])
+            except Exception:
+                pass
             total_size += file_size
             i += 1
     except (Exception, KeyboardInterrupt):
