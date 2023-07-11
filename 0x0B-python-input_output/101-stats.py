@@ -19,12 +19,13 @@ for line in sys.stdin:
     print(stripped)
     file_size_index = 5
     status_code_index = 4
-    code = int(stripped[status_code_index])
+    code = stripped[status_code_index]
+    file_size = stripped[file_size_index]
     if code in code_dict:
         code_dict[code] = code_dict[code] + 1
     else:
         code_dict[code] = 1
-    total_size += int(stripped[file_size_index])
+    total_size += int(file_size)
     print(stripped)
-    print(f"{code} {total_size}")
+    print(f"{code} - {file_size} {total_size}")
     i += 1
