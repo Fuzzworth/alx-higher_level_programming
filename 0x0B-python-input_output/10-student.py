@@ -22,8 +22,10 @@ class Student:
         """
         final_list = {}
         all_string = True
-        if type(attrs) is list:
+        if type(attrs) is not list:
             all_string = False
+
+        if type(attrs) is list:
             for i in attrs:
                 if type(i) != str:
                     all_string = False
