@@ -2,8 +2,8 @@
 """
 Module docs
 """
-import fileinput
+import sys
 
 
-for line in fileinput.input():
+for line in sys.stdin:
     print(line)
