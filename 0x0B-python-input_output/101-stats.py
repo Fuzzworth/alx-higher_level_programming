@@ -26,6 +26,5 @@ for line in sys.stdin:
     else:
         code_dict[code] = 1
     total_size += int(file_size)
-    print(stripped)
     print(f"{code} - {file_size} {total_size}")
     i += 1
