@@ -18,11 +18,11 @@ for line in sys.stdin:
     stripped = line.strip(" ")
     file_size_index = 5
     status_code_index = 4
-    code = stripped[status_code_index]
+    code = int(stripped[status_code_index])
     if code in code_dict:
         code_dict[code] = code_dict[code] + 1
     else:
         code_dict[code] = 1
     total_size += int(stripped[file_size_index])
-    print(code_dict)
+    print(f"{code} {total_size}")
     i += 1
