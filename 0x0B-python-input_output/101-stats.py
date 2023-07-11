@@ -2,7 +2,7 @@
 """
 Module docs
 """
-import sys, traceback
+import sys
 
 
 def print_stats(code_dict, total_size):
@@ -41,7 +41,6 @@ def stats():
             i += 1
     except KeyboardInterrupt as e:
         print_stats(code_dict, total_size)
-        traceback.print_exc(file=sys.stdout)
-
+        raise e
 
 stats()
