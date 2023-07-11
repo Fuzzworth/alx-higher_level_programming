@@ -25,4 +25,4 @@ for line in sys.stdin:
     else:
         code_dict[code] = 1
     total_size += int(file_size)
-    i += 1
+    i += int(1)
