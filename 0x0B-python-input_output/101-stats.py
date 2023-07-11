@@ -16,17 +16,13 @@ for line in sys.stdin:
         code_dict.clear()
         total_size = 0
     stripped = line.strip(" ")
-    print(stripped)
-    if len(stripped) == 6:
-        file_size_index = 5
-        status_code_index = 4
-    else:
-        file_size_index = 4
-        status_code_index = 3
+    file_size_index = 5
+    status_code_index = 4
     code = stripped[status_code_index]
     if code in code_dict:
         code_dict[code] = code_dict[code] + 1
     else:
         code_dict[code] = 1
     total_size += int(stripped[file_size_index])
+    print(code_dict)
     i += 1
