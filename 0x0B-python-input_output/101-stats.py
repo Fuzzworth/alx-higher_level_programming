@@ -44,6 +44,7 @@ def stats():
                 pass
             total_size += file_size
             i += 1
+        print_stats(code_dict, total_size)
     except (Exception, KeyboardInterrupt):
         print_stats(code_dict, total_size)
         raise
