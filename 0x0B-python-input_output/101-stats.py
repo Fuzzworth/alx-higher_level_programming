@@ -9,12 +9,10 @@ def print_stats(code_dict, total_size):
     """
     function doc
     """
-    myKeys = list(code_dict.keys())
-    myKeys.sort()
-    sorted_dict = {p: code_dict[p] for p in myKeys}
+    code_dict = sorted(code_dict)
     print("File size: {:d}".format(total_size))
-    for c in sorted_dict:
-        print("{}: {}".format(c, sorted_dict[c]))
+    for c in code_dict:
+        print("{}: {}".format(c, code_dict[c]))
 
 
 def stats():
