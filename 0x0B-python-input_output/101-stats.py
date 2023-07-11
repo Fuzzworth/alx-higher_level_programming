@@ -35,4 +35,3 @@ except KeyboardInterrupt:
     print(f"File size: {total_size}")
     for c in sorted_dict:
         print("{}: {}".format(c, sorted_dict[c]))
-    raise KeyboardInterrupt
