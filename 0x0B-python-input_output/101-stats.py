@@ -41,7 +41,7 @@ def stats():
             i += 1
     except KeyboardInterrupt as e:
         print_stats(code_dict, total_size)
-        raise KeyboardInterrupt("")
+        raise e
 
 
 stats()
