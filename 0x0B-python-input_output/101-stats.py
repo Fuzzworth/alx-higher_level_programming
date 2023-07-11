@@ -12,7 +12,7 @@ for line in sys.stdin:
     if i != 0 and i % 10 == 0:
         print(f"File size: {total_size}")
         for i in code_dict:
-            print("{:d}: {:d}".format(i, code_dict[i]))
+            print("{}: {}".format(i, int(code_dict[i]))
         code_dict.clear()
         total_size = 0
     stripped = line.strip(" ")
