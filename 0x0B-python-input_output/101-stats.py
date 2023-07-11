@@ -4,17 +4,20 @@ Module docs
 """
 
 
-def print_stats(code_dict, total_size):
+
+
+
+if __name__ == '__main__':
+    import sys
+
+    def print_stats(code_dict, total_size):
     """
     function doc
     """
     print("File size: {:d}".format(total_size))
     for c in sorted(code_dict):
         print("{}: {}".format(c, code_dict[c]))
-
-
-if __name__ == '__main__':
-    import sys
+    
 
     code_dict = {}
     total_size = 0
