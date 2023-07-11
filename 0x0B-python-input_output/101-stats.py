@@ -15,7 +15,8 @@ def print_stats(code_dict, total_size):
     print("File size: {:d}".format(total_size))
     for c in sorted_dict:
         print("{}: {}".format(c, sorted_dict[c]))
-    
+
+
 i = 0
 code_dict = {}
 total_size = 0
