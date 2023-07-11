@@ -16,8 +16,8 @@ for line in sys.stdin:
         code_dict.clear()
         total_size = 0
     stripped = line.strip(" ")
-    file_size_index = 8
-    status_code_index = 7
+    file_size_index = -1
+    status_code_index = -2
     code = int(stripped[status_code_index])
     if code in code_dict:
         code_dict[code] = code_dict[code] + 1
