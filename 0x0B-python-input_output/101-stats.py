@@ -2,7 +2,7 @@
 """
 Module docs
 """
-import sys
+import sys, traceback
 
 
 i = 0
@@ -35,3 +35,4 @@ except KeyboardInterrupt:
     print(f"File size: {total_size}")
     for c in sorted_dict:
         print("{}: {}".format(c, sorted_dict[c]))
+    traceback.print_exc(file=sys.stdout)
