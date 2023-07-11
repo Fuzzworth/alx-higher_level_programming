@@ -30,8 +30,8 @@ def stats():
                 print_stats(code_dict, total_size)
             stripped = line.split()
             try:
-                code = int(stripped[status_code_index])
-            except Exception:
+                code = stripped[status_code_index]
+            except IndexError:
                 pass
             if code in valid_index:
                 if code in code_dict:
@@ -40,7 +40,7 @@ def stats():
                     code_dict[code] = 1
             try:
                 file_size = int(stripped[file_size_index])
-            except Exception:
+            except (IndexError, ValueError):
                 pass
             total_size += file_size
             i += 1
