@@ -18,6 +18,9 @@ def print_stats(code_dict, total_size):
 
 
 def stats():
+    """
+    function docs
+    """
     code_dict = {}
     total_size = 0
     file_size_index = 8
