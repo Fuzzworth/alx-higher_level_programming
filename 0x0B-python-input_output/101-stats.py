@@ -44,4 +44,5 @@ def stats():
         raise e
 
 
-stats()
+if __name__ == "__main__":
+    stats()
