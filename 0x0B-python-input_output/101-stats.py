@@ -44,4 +44,7 @@ def stats():
         raise KeyboardInterrupt
 
 
-stats()
+try:
+    stats()
+except KeyboardInterrupt:
+    pass
