@@ -4,6 +4,7 @@ Module docs
 """
 import sys
 
+
 i = 0
 code_dict = {}
 total_size = 0
@@ -26,5 +27,5 @@ for line in sys.stdin:
         code_dict[code] = code_dict[code] + 1
     else:
         code_dict[code] = 1
-    total_size += stripped[file_size_index]
+    total_size += int(stripped[file_size_index])
     i += 1
