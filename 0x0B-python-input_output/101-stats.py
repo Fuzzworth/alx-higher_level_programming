@@ -23,6 +23,7 @@ def print_stats(code_dict, total_size):
     for c in sorted_dict:
         print("{}: {}".format(c, sorted_dict[c]))
 
+
 def stats():
     try:
         for line in sys.stdin:
