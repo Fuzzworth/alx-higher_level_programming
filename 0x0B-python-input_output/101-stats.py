@@ -39,9 +39,9 @@ def stats():
             file_size = int(stripped[file_size_index])
             total_size += file_size
             i += 1
-    except KeyboardInterrupt:
+    except KeyboardInterrupt as e:
         print_stats(code_dict, total_size)
-        raise KeyboardInterrupt("")
+        raise e
 
 
 stats()
