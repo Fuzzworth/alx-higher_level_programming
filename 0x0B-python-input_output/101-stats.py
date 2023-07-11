@@ -8,6 +8,8 @@ import sys
 i = 0
 code_dict = {}
 total_size = 0
+file_size_index = 8
+status_code_index = 7
 try:
     for line in sys.stdin:
         if i != 0 and i % 10 == 0:
@@ -18,8 +20,6 @@ try:
             for c in sorted_dict:
                 print("{}: {}".format(c, sorted_dict[c]))
         stripped = line.split()
-        file_size_index = 8
-        status_code_index = 7
         code = stripped[status_code_index]
         file_size = stripped[file_size_index]
         if code in code_dict:
