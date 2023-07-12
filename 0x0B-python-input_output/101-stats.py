@@ -9,8 +9,8 @@ if __name__ == '__main__':
 
     code_dict = {}
     total_size = 0
-    file_size_index = 8
-    status_code_index = 7
+    file_size_index = -1
+    status_code_index = -2
     valid_index = [200, 301, 400, 401, 403, 404, 405, 500]
     i = 0
     try:
