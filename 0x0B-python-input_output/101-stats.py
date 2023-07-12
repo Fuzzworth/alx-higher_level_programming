@@ -48,5 +48,5 @@ if __name__ == '__main__':
     except (Exception, KeyboardInterrupt):
         print("File size: {:d}".format(total_size))
         for c in sorted(code_dict):
-                print("{}: {}".format(c, code_dict[c]))
+            print("{}: {}".format(c, code_dict[c]))
         raise
