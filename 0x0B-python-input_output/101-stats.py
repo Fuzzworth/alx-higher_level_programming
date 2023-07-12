@@ -13,6 +13,7 @@ if __name__ == '__main__':
     status_code_index = 7
     valid_index = [200, 301, 400, 401, 403, 404, 405, 500]
     i = 0
+
     try:
         for line in stdin:
             if i != 0 and i % 10 == 0:
