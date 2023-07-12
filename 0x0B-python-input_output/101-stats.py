@@ -30,7 +30,7 @@ if __name__ == '__main__':
             try:
                 code = int(stripped[status_code_index])
             except (IndexError, ValueError):
-                raise
+                pass
             if code in valid_index:
                 if code in code_dict:
                     code_dict[code] = code_dict[code] + 1
@@ -39,7 +39,7 @@ if __name__ == '__main__':
             try:
                 file_size = int(stripped[file_size_index])
             except (IndexError, ValueError):
-                raise
+                pass
             total_size += file_size
             i += 1
         print("File size: {:d}".format(total_size))
