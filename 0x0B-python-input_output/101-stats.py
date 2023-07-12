@@ -5,7 +5,7 @@ Module docs
 
 
 if __name__ == '__main__':
-    import sys
+    from sys import stdin
 
     code_dict = {}
     total_size = 0
@@ -14,7 +14,7 @@ if __name__ == '__main__':
     valid_index = [200, 301, 400, 401, 403, 404, 405, 500]
     i = 0
     try:
-        for line in sys.stdin:
+        for line in stdin:
             if i != 0 and i % 10 == 0:
                 print("File size: {:d}".format(total_size))
                 for c in sorted(code_dict):
