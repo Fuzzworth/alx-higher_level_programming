@@ -21,6 +21,11 @@ if __name__ == '__main__':
                     print("{}: {}".format(c, code_dict[c]))
             stripped = line.split()
             try:
+                file_size = int(stripped[file_size_index])
+                total_size += file_size
+            except (IndexError, ValueError):
+                pass
+            try:
                 code = int(stripped[status_code_index])
             except (IndexError, ValueError):
                 pass
@@ -32,11 +37,7 @@ if __name__ == '__main__':
                     code_dict[code] = code_dict[code] + 1
                 else:
                     code_dict[code] = 1
-            try:
-                file_size = int(stripped[file_size_index])
-                total_size += file_size
-            except (IndexError, ValueError):
-                pass
+            
             i += 1
         print("File size: {:d}".format(total_size))
         for c in sorted(code_dict):
