@@ -28,8 +28,8 @@ if __name__ == '__main__':
                     print("{}: {}".format(c, code_dict[c]))
             stripped = line.split()
             try:
-                code = stripped[status_code_index]
-            except IndexError:
+                code = int(stripped[status_code_index])
+            except (IndexError, ValueError):
                 raise
             if code in valid_index:
                 if code in code_dict:
