@@ -25,6 +25,9 @@ if __name__ == '__main__':
             except (IndexError, ValueError):
                 pass
             if code in valid_index:
+                print(line)
+                print(code)
+                print(code_dict)
                 if code in code_dict:
                     code_dict[code] = code_dict[code] + 1
                 else:
