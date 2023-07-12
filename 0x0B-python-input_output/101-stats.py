@@ -7,13 +7,6 @@ Module docs
 if __name__ == '__main__':
     import sys
 
-    def print_stats(code_dict, total_size):
-        """
-        function doc
-        """
-        print("File size: {:d}".format(total_size))
-        for c in sorted(code_dict):
-            print("{}: {}".format(c, code_dict[c]))
     code_dict = {}
     total_size = 0
     file_size_index = 8
