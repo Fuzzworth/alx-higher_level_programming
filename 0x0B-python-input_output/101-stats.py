@@ -31,9 +31,9 @@ if __name__ == '__main__':
                     code_dict[code] = 1
             try:
                 file_size = int(stripped[file_size_index])
+                total_size += file_size
             except (IndexError, ValueError):
                 pass
-            total_size += file_size
             i += 1
         print("File size: {:d}".format(total_size))
         for c in sorted(code_dict):
