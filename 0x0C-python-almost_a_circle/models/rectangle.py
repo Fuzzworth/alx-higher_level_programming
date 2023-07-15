@@ -152,6 +152,6 @@ class Rectangle(Base):
     def __str__(self):
         """str: Function call"""
 
-        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(Base.id,
+        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(super().id,
                                                                  self.x, self.y,
                                                                  self.width, self.height)
