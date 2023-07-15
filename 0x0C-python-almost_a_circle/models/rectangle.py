@@ -148,3 +148,8 @@ class Rectangle(Base):
             if i != (self.__height - 1):
                 rectangle += "\n"
         print(rectangle)
+
+    def __str__(self):
+        """str: Function call"""
+
+        return "Rectangle({:d}, {:d})".format(self.width, self.height)
