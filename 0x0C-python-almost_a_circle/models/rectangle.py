@@ -34,8 +34,7 @@ class Rectangle(Base):
         """
         Function Doc
         """
-        self.type_int_check("width", value)
-        self.zero_check("width", value)
+        self.all_checks("width", value)
         self.__width = value
 
     @property
@@ -51,8 +50,7 @@ class Rectangle(Base):
         """
         Function doc
         """
-        self.type_int_check("height", value)
-        self.zero_check("height", value)
+        self.all_checks("height", value)
 
         self.__height = value
 
@@ -70,7 +68,7 @@ class Rectangle(Base):
         Function doc
         """
 
-        self.zero_check("x", value)
+        self.all_checks("x", value)
         self.__x = value
 
     @property
@@ -87,8 +85,16 @@ class Rectangle(Base):
         Function doc
         """
 
-        self.zero_check("y", value)
+        self.all_checks("y", value)
         self.__y = value
+
+    def all_checks(self, attribute, value):
+        """
+        Function docs
+        """
+
+        self.type_int_check(attribute, value)
+        self.zero_check(attribute, value)
 
     def zero_check(self, attribute, value):
         """
