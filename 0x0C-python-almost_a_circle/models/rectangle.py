@@ -15,10 +15,10 @@ class Rectangle(Base):
         Function docs
         """
 
-        self.__width = self.width(width)
-        self.__height = self.height(height)
-        self.__x = self.x(x)
-        self.__y = self.y(y)
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
 
         super().__init__(id)
 
