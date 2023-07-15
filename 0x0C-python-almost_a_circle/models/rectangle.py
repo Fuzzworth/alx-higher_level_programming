@@ -141,11 +141,11 @@ class Rectangle(Base):
         """
 
         rectangle = ""
-        if self.__width == 0 or self.__height == 0:
-            return rectangle
+        for y in range(self.y):
+            rectangle += "\n"
         for i in range(self.__height):
-            rectangle += "#" * self.__width
-            if i != (self.__height - 1):
+            rectangle += (" " * self.x) + ("#" * self.width)
+            if i != (self.height - 1):
                 rectangle += "\n"
         print(rectangle)
 
