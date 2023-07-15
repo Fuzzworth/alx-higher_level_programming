@@ -50,8 +50,8 @@ class Rectangle(Base):
         """
         Function doc
         """
-        self.all_checks("height", value)
 
+        self.all_checks("height", value)
         self.__height = value
 
     @property
@@ -96,11 +96,23 @@ class Rectangle(Base):
         self.type_int_check(attribute, value)
         self.zero_check(attribute, value)
 
+    def attribute_check(self, attribute):
+        """
+        Function doc
+        """
+
+        if type(attribute) is not str:
+            raise TypeError("attribute must be of type str")
+
+        if len(attribute) == 0:
+            raise ValueError("attribute cannot be an empty string")
+
     def zero_check(self, attribute, value):
         """
         Function doc
         """
 
+        self.attribute_check(attribute)
         if value < 0:
             raise ValueError("{} must be >= 0".format(attribute))
 
@@ -109,5 +121,16 @@ class Rectangle(Base):
         Function doc
         """
 
+        self.attribute_check(attribute)
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(attribute))
+
+    def area(self):
+        """
+        Area calculator
+
+        Return:
+            int: area
+        """
+
+        return self.width * self.height
