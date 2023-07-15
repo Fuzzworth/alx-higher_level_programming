@@ -14,11 +14,11 @@ class Rectangle(Base):
         """
         Function docs
         """
-
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
         super().__init__(id)
 
@@ -34,7 +34,8 @@ class Rectangle(Base):
         """
         Function Doc
         """
-
+        self.type_int_check("width", value)
+        self.zero_check("width", value)
         self.__width = value
 
     @property
@@ -50,6 +51,8 @@ class Rectangle(Base):
         """
         Function doc
         """
+        self.type_int_check("height", value)
+        self.zero_check("height", value)
 
         self.__height = value
 
@@ -67,6 +70,7 @@ class Rectangle(Base):
         Function doc
         """
 
+        self.zero_check("x", value)
         self.__x = value
 
     @property
@@ -83,4 +87,21 @@ class Rectangle(Base):
         Function doc
         """
 
+        self.zero_check("y", value)
         self.__y = value
+
+    def zero_check(self, attribute, value):
+        """
+        Function doc
+        """
+
+        if value < 0:
+            raise ValueError("{} must be >= 0".format(attribute))
+
+    def type_int_check(self, attribute, value):
+        """
+        Function doc
+        """
+
+        if type(value) is not int:
+            raise TypeError("{} must be an integer".format(attribute))
