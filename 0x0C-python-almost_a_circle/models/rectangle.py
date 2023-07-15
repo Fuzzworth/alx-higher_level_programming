@@ -14,7 +14,7 @@ class Rectangle(Base):
         """
         Function docs
         """
-        
+
         self.width = width
         self.height = height
         self.x = x
