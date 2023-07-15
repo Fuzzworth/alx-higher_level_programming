@@ -172,6 +172,6 @@ class Rectangle(Base):
             if len(args) >= 5:
                 self.y = args[4]
         elif kwargs:
-            for key, values in kwargs.items():
+            for key, value in kwargs.items():
                 if key in self.__dict__:
                     self.key = value
