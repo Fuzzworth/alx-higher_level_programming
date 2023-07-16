@@ -3,7 +3,7 @@
 Module Docs
 """
 from json import dumps, loads
-from os.path import isfile 
+from os.path import isfile
 
 
 class Base:
