@@ -172,10 +172,7 @@ class Rectangle(Base):
             if len(args) >= 5:
                 self.y = args[4]
         elif kwargs:
-            print(kwargs)
-            print(dir(self))
-            print(self.__dict__)
             for key, value in kwargs.items():
-                if key in self.__dict__:
+                if key in dir(self):
                     print(f"{key} = {value}")
                     exec("self.{} = {}".format(key, value))
