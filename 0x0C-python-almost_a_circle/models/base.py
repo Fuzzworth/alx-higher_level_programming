@@ -67,9 +67,9 @@ class Base:
         """
 
         if "width" in dictionary and "height" in dictionary:
-            dummy_obj = cls(dictionary["width"], dictionary["height"])
+            dummy_obj = cls(0, 0)
         elif "size" in dictionary:
-            dummy_obj = cls(dictionary["size"])
+            dummy_obj = cls(0)
         print(cls)
         print(dummy_obj)
         dummy_obj.update(dictionary)
