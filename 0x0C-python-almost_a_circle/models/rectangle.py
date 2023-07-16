@@ -172,6 +172,7 @@ class Rectangle(Base):
             if len(args) >= 5:
                 self.y = args[4]
         elif kwargs:
+            valid_attributes = ['id', 'width', 'height', 'x', 'y']
             for key, value in kwargs.items():
-                if key in dir(self):
+                if key in valid_attributes:
                     exec("self.{} = {}".format(key, value))
