@@ -90,8 +90,7 @@ class Base:
             print(final_list)
             obj_list = []
             for i in final_list:
-                print(i)
-                class_created = cls.create(&i);
+                class_created = cls.create(**i);
                 obj_list.append(class_created)
             return obj_list
         else:
