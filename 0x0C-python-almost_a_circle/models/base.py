@@ -72,4 +72,4 @@ class Base:
         elif "size" in dictionary:
             dummy_obj = cls(dictionary["size"])
         dummy_obj.update(dictionary)
-        return cls
+        return dummy_obj
