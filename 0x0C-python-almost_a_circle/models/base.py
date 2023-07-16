@@ -30,11 +30,11 @@ class Base:
 
         if type(list_dictionaries) is list:
             if len(list_dictionaries) == 0:
-                return json.dumps([])
+                return dumps([])
             else:
                 return json.dumps(list_dictionaries)
         elif list_dictionaries is None:
-            return json.dumps([])
+            return dumps([])
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -57,7 +57,7 @@ class Base:
             if len(json_string) == 0:
                 return []
             else:
-                return json.loads(json_string)
+                return loads(json_string)
         elif json_string is None:
             return []
 
