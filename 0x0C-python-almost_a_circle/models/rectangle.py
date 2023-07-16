@@ -173,7 +173,7 @@ class Rectangle(Base):
                 self.y = args[4]
         elif kwargs:
             print(kwargs)
-            print(self.__dict__)
+            print(dirr(self))
             for key, value in kwargs.items():
                 if key in self.__dict__:
                     print(f"{key} = {value}")
