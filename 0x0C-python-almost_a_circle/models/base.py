@@ -70,5 +70,5 @@ class Base:
             dummy_obj = cls(dictionary["width"], dictionary["height"])
         elif "size" in dictionary:
             dummy_obj = cls(dictionary["size"])
-        obj.update(dictionary)
-        return obj
+        dummy_obj.update(dictionary)
+        return dummy_obj
