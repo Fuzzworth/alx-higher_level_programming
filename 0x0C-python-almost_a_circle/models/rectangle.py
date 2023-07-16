@@ -174,6 +174,7 @@ class Rectangle(Base):
         elif kwargs:
             print(kwargs)
             print(dir(self))
+            print(self.__dict__)
             for key, value in kwargs.items():
                 if key in self.__dict__:
                     print(f"{key} = {value}")
