@@ -89,7 +89,7 @@ class Base:
                 print(line)
                 final_list = cls.from_json_string(line)
             obj_list = []
-            for i in final_list):
+            for i in final_list:
                 class_created = cls.create(i);
                 obj_list.append(class_created)
             return obj_list
