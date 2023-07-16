@@ -2,7 +2,8 @@
 """
 Module Docs
 """
-import json
+from json import dumps, loads
+from os.path import isfile 
 
 
 class Base:
@@ -70,5 +71,27 @@ class Base:
             dummy_obj = cls(0, 0)
         elif cls.__name__ == "Square":
             dummy_obj = cls(0)
+        else:
+            dummy_obj = cls()
+            return dummy_obj
         dummy_obj.update(**dictionary)
         return dummy_obj
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        Function Doc
+        """
+        filename = "{}.json".format(cls.__name__)
+        if isfile(filename):
+            with open(filename, "r") as f:
+                line = f.readline()
+                print(line)
+                final_list = cls.from_json_string(line)
+            obj_list = []
+            for i in final_list):
+                class_created = cls.create(i);
+                obj_list.append(class_created)
+            return obj_list
+        else:
+            return []
