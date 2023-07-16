@@ -90,7 +90,7 @@ class Base:
                 final_list = Base.from_json_string(line)
             obj_list = []
             for i in final_list:
-                class_created = cls.create(i);
+                class_created = create(i);
                 obj_list.append(class_created)
             return obj_list
         else:
