@@ -66,5 +66,5 @@ class Base:
         Function Doc
         """
 
-        obj = cls()
-        return obj.update(dictionary)
+
+        return cls.update(dictionary)
