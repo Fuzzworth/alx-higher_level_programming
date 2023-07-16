@@ -32,7 +32,7 @@ class Base:
             if len(list_dictionaries) == 0:
                 return dumps([])
             else:
-                return json.dumps(list_dictionaries)
+                return dumps(list_dictionaries)
         elif list_dictionaries is None:
             return dumps([])
 
