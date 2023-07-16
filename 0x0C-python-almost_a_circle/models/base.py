@@ -66,11 +66,10 @@ class Base:
         Function Doc
         """
 
-        if "width" in dictionary and "height" in dictionary:
+        if cls.__name__ == "Rectangle":
             dummy_obj = cls(0, 0)
-        elif "size" in dictionary:
+        elif cls.__name__ == "Square":
             dummy_obj = cls(0)
-        print(cls)
         print(dummy_obj)
-        dummy_obj.update(dictionary)
+        dummy_obj.update(**dictionary)
         return dummy_obj
