@@ -70,6 +70,5 @@ class Base:
             dummy_obj = cls(0, 0)
         elif cls.__name__ == "Square":
             dummy_obj = cls(0)
-        print(dummy_obj)
         dummy_obj.update(**dictionary)
         return dummy_obj
