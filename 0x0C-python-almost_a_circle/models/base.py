@@ -59,3 +59,12 @@ class Base:
                 return json.loads(json_string)
         elif json_string is None:
             return []
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        Function Doc
+        """
+
+        obj = exec("{}()".format(cls.__name__))
+        return obj.update(dictionary)
