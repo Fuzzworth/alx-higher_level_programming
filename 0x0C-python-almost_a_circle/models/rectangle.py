@@ -176,3 +176,10 @@ class Rectangle(Base):
             for key, value in kwargs.items():
                 if key in valid_attributes:
                     exec("self.{} = {}".format(key, value))
+
+    def to_dictionary(self):
+        """
+        Function Doc
+        """
+
+        return {'x': self.x, 'y': self.y, 'id': self.id, 'height': self.height, 'width': self.width}
