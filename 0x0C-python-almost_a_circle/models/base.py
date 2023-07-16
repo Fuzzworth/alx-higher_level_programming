@@ -72,5 +72,5 @@ class Base:
             dummy_obj = cls(dictionary["size"])
         print(cls)
         print(dummy_obj)
-        dummy_obj.update(cls,dictionary)
+        dummy_obj.update(dictionary)
         return dummy_obj
