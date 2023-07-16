@@ -86,7 +86,6 @@ class Base:
         if isfile(filename):
             with open(filename, "r") as f:
                 line = f.readline()
-                print(line)
                 final_list = Base.from_json_string(line)
             print(final_list)
             obj_list = []
