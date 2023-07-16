@@ -66,5 +66,5 @@ class Base:
         Function Doc
         """
 
-
+        obj = cls(dictionary["width"], dictionary["height"])
         return cls.update(dictionary)
