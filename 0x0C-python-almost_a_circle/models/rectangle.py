@@ -174,5 +174,4 @@ class Rectangle(Base):
         elif kwargs:
             for key, value in kwargs.items():
                 if key in dir(self):
-                    print(f"{key} = {value}")
                     exec("self.{} = {}".format(key, value))
