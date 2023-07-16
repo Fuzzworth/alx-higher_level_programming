@@ -67,4 +67,5 @@ class Base:
         """
 
         obj = cls(dictionary["width"], dictionary["height"])
-        return cls.update(dictionary)
+        obj.update(dictionary)
+        return obj
