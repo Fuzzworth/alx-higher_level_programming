@@ -66,6 +66,7 @@ class Base:
         Function Doc
         """
 
+        print(dictionary)
         if "width" in dictionary:
             dummy_obj = cls(dictionary["width"], dictionary["height"])
         elif "size" in dictionary:
