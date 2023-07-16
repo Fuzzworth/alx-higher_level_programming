@@ -41,7 +41,7 @@ class Base:
         Function Docs
         """
 
-        final_list = [x.to_dictionary() for i in list_objs]
+        final_list = [i.to_dictionary() for i in list_objs]
         print(final_list)
         filename = "{}.json".format(cls.__name__)
         with open(filename, "w") as f:
