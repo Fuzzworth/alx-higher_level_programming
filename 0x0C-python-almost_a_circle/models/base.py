@@ -87,7 +87,6 @@ class Base:
             with open(filename, "r") as f:
                 line = f.readline()
                 final_list = Base.from_json_string(line)
-            print(final_list)
             obj_list = []
             for i in final_list:
                 class_created = cls.create(**i);
