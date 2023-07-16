@@ -41,7 +41,7 @@ class Base:
         Function Docs
         """
 
-        filename = "{}.json".format(cls.__class__.__name__)
+        filename = "{}.json".format(cls.__name__)
         print(filename)
         with open(filename, "w") as f:
             f.write(Base.to_json_string(list_objs))
