@@ -120,6 +120,8 @@ class Base:
                 csv_reader = csv.reader(csv_file, delimiter=',')
                 for row in csv_reader:
                     obj_dict = cls.parse_csv(row)
+                    print(row)
+                    print(obj_dict)
                     final_list.append(obj_dict)
             for i in final_list:
                 print(i)
