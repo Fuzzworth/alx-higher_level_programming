@@ -180,6 +180,8 @@ class Base:
         turtle.bgcolor("black")
         t = turtle.Turtle()
         turtle.colormode(255)
+        square_width = 0
+        rectangle_width = 0
         width = 0
         greatest_height = float("-inf")
         for i in list_rectangles:
@@ -200,6 +202,7 @@ class Base:
             t.penup()
             width += i.width + 10
             t.goto(width, 0)
+        rectangle_width = width
         width = 0
         t.home()
         t.goto(0, greatest_height + 10)
@@ -219,4 +222,48 @@ class Base:
             t.penup()
             width += i.width + 10
             t.goto(width, greatest_height + 10)
+        if rectangle_width > width:
+            width = rectangle_width
+        t.goto(width, 0)
+        for i in list_rectangles.reverse():
+            t.color(randint(0, 255), randint(0, 255), randint(0, 255))
+            if i.height > greatest_height:
+                greatest_height = i.height
+            t.begin_fill()
+            t.pendown()
+            t.fd(i.width)
+            t.rt(90)
+            t.fd(i.height)
+            t.rt(90)
+            t.fd(i.width)
+            t.rt(90)
+            t.fd(i.height)
+            t.rt(90)
+            t.end_fill()
+            t.penup()
+            width += i.width + 10
+            t.goto(width, 0)
+        rectangle_width = width
+        width = 0
+        t.home()
+        t.goto(0, greatest_height + 10)
+        for i in list_squares.reverse():
+            t.color(randint(0, 255), randint(0, 255), randint(0, 255))
+            t.begin_fill()
+            t.pendown()
+            t.fd(i.size)
+            t.rt(90)
+            t.fd(i.size)
+            t.rt(90)
+            t.fd(i.size)
+            t.rt(90)
+            t.fd(i.size)
+            t.rt(90)
+            t.end_fill()
+            t.penup()
+            width += i.width + 10
+            t.goto(width, greatest_height + 10)
+        if rectangle_width > width:
+            width = rectangle_width
+
         turtle.done()
