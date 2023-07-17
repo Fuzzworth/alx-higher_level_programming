@@ -120,7 +120,9 @@ class Base:
             with open(filename, "r") as csv_file:
                 csv_reader = csv.reader(csv_file, delimiter=',')
                 for row in csv_reader:
+                    print(row)
                     obj_dict = cls.parse_csv(row)
+                    print(obj_dict)
                     final_list.append(obj_dict)
             for i in final_list:
                 class_created = cls.create(**i);
