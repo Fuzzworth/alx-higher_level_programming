@@ -259,9 +259,7 @@ class Base:
             t.rt(90)
             t.end_fill()
             t.penup()
-            width += i.width + 10
-            t.goto(width, greatest_height + 10)
-        if rectangle_width > width:
-            width = rectangle_width
+            last_width += i.width + 10
+            t.goto(last_width, greatest_height + 10)
 
         turtle.done()
