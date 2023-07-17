@@ -183,8 +183,8 @@ class Base:
         rectangle_width = 0
         last_width = 0
         width = 0
-        greatest_height = float("-inf")
         for times in range(6):
+            greatest_height = float("-inf")
             for i in list_rectangles:
                 t.color(randint(0, 255), randint(0, 255), randint(0, 255))
                 if i.height > greatest_height:
