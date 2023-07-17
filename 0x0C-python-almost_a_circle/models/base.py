@@ -154,31 +154,19 @@ class Base:
         return dictionary_row
 
     @classmethod
-    def parse_dictionary_to_csv(cls, dictionary):
+    def to_dictionary(cls, obj_item):
         """
         Function doc
         """
 
         list_item = []
-        if type(dictionary) is dict:
+        if type(obj_item) is dict:
+            list_item.append(obj_item.id)
             if cls.__name__ == "Rectangle":
-                if "id" in dictionary:
-                    list_item.append(dictionary["id"])
-                if "width" in dictionary:
-                    list_item.append(dictionary_row["width"])
-                if "height" in dictionary:
-                    list_item.append(dictionary_row["height"])
-                if "x" in dictionary:
-                    list_item.append(dictionary_row["x"])
-                if "y" in dictionary:
-                    list_item.append(dictionary_row["y"])
+                    list_item.append(obj_item.width)
+                    list_item.append(obj_item.height)    
             elif cls.__name__ == "Square":
-                if "id" in dictionary:
-                    list_item.append(dictionary_row["id"])
-                if "size" in dictionary:
-                    list_item.append(dictionary_row["size"])
-                if "x" in dictionary:
-                    list_item.append(dictionary_row["x"])
-                if "y" in dictionary:
-                    list_item.append(dictionary_row["y"])
+                list_item.append(obj_item.size)
+            list_item.append(obj_item.x)
+            list_item.append(obj_item.y)
         return list_item
