@@ -184,7 +184,6 @@ class Base:
             rectangle_width = 0
             last_width = 0
             width = 0
-            greatest_height = float("-inf")
             for i in list_rectangles:
                 t.color(randint(0, 255), randint(0, 255), randint(0, 255))
                 if i.height > greatest_height:
@@ -205,7 +204,6 @@ class Base:
                 t.goto(width, 0)
             rectangle_width = width
             width = last_width
-            t.home()
             t.goto(last_width, greatest_height + 10)
             for i in list_squares:
                 t.color(randint(0, 255), randint(0, 255), randint(0, 255))
@@ -225,6 +223,6 @@ class Base:
                 t.goto(width, greatest_height + 10)
             if rectangle_width > width:
                 width = rectangle_width
-            last_width = width
+            t.home()
             t.clear()
         turtle.done()
