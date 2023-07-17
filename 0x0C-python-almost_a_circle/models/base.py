@@ -183,9 +183,7 @@ class Base:
         width = 0
         greatest_height = float("-inf")
         for i in list_rectangles:
-            turtle.color(randint(0, 255),
-          randint(0, 255),
-          randint(0, 255))
+            turtle.color(randint(0, 255), randint(0, 255), randint(0, 255))
             if i.height > greatest_height:
                 greatest_height = i.height
             t.begin_fill()
@@ -204,10 +202,7 @@ class Base:
         t.home()
         t.goto(0, greatest_height + 10)
         for i in list_squares:
-turtle.color(randint(0, 255),
-          randint(0, 255),
-          randint(0, 255))
-
+            turtle.color(randint(0, 255), randint(0, 255), randint(0, 255))
             t.begin_fill()
             t.fd(i.size)
             t.rt(90)
