@@ -201,3 +201,4 @@ class Base:
             t.lt(i.size)
             t.end_fill()
             t.goto(i.size + 10, greatest_height + 10)
+        turtle.done()
