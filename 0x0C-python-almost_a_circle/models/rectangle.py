@@ -94,7 +94,10 @@ class Rectangle(Base):
         """
 
         self.type_int_check(attribute, value)
-        self.zero_check(attribute, value)
+        if attribute == 'x' or attribute == 'y':
+            self.negative_check(attribute, value)
+        else:
+            self.zero_and_negative_check(attribute, value)
 
     def attribute_check(self, attribute):
         """
@@ -104,10 +107,16 @@ class Rectangle(Base):
         if type(attribute) is not str:
             raise TypeError("attribute must be of type str")
 
-        if len(attribute) == 0:
-            raise ValueError("attribute cannot be an empty string")
+    def zero_and_negative_check(self, attribute, value):
+        """
+        Function doc
+        """
 
-    def zero_check(self, attribute, value):
+        self.attribute_check(attribute)
+        if value <= 0:
+            raise ValueError("{} must be > 0".format(attribute))
+
+    def negative_check(self, attribute, value):
         """
         Function doc
         """
