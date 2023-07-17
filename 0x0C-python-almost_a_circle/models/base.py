@@ -225,7 +225,7 @@ class Base:
         if rectangle_width > width:
             width = rectangle_width
         t.goto(width, 0)
-        for i in list_rectangles.reverse():
+        for i in list_rectangles:
             t.color(randint(0, 255), randint(0, 255), randint(0, 255))
             if i.height > greatest_height:
                 greatest_height = i.height
@@ -247,7 +247,7 @@ class Base:
         width = 0
         t.home()
         t.goto(0, greatest_height + 10)
-        for i in list_squares.reverse():
+        for i in list_squares:
             t.color(randint(0, 255), randint(0, 255), randint(0, 255))
             t.begin_fill()
             t.pendown()
