@@ -204,7 +204,7 @@ class Base:
                 width += i.width + 10
                 t.goto(width, 0)
             rectangle_width = width
-            width = 0
+            width = last_width
             t.home()
             t.goto(0, greatest_height + 10)
             for i in list_squares:
