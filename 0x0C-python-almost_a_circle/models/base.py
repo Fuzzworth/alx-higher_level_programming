@@ -160,7 +160,7 @@ class Base:
         """
 
         list_item = []
-        if type(obj_item) is dict:
+        if isinstance(obj_dict, Base):
             list_item.append(obj_item.id)
             if cls.__name__ == "Rectangle":
                     list_item.append(obj_item.width)
