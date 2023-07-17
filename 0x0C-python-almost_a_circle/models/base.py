@@ -158,7 +158,7 @@ class Base:
 
         list_item = []
         if type(dictionary) is dict:
-            if cls.__name__ = "Rectangle":
+            if cls.__name__ == "Rectangle":
                 if "id" in dictionary:
                     list_item.append(dictionary["id"])
                 if "width" in dictionary:
@@ -169,7 +169,7 @@ class Base:
                     list_item.append(dictionary_row["x"])
                 if "y" in dictionary:
                     list_item.append(dictionary_row["y"])
-            elif cls.__name__ = "Square":
+            elif cls.__name__ == "Square":
                 if "id" in dictionary:
                     list_item.append(dictionary_row["id"])
                 if "size" in dictionary:
