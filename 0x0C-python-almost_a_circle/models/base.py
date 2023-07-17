@@ -105,7 +105,9 @@ class Base:
         with open(filename, mode='w') as csv_file:
             csv_writer = csv.writer(csv_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
             for i in list_objs:
-                i_list = cls.to_dictionary(i)
+                i_list = cls.to_list(i)
+                print(i)
+                print(i_list)
                 csv_writer.writerow(i_list)
 
     @classmethod
@@ -152,7 +154,7 @@ class Base:
         return dictionary_row
 
     @classmethod
-    def to_dictionary(cls, obj_item):
+    def to_list(cls, obj_item):
         """
         Function doc
         """
