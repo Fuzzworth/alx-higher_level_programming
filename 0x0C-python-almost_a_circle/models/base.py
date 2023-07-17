@@ -130,7 +130,7 @@ class Base:
             for i in final_list:
                 class_created = cls.create(**i)
                 obj_list.append(class_created)
-        return obj_list      
+        return obj_list
 
     @classmethod
     def parse_csv(cls, row):
