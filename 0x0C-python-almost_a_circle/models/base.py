@@ -135,17 +135,15 @@ class Base:
 
         dictionary_row = {}
         if type(row) is list:
-            dictionary_row = []
+            dictionary_row["id"] = row[0]
             if cls.__name__ == "Rectangle":
                 if len(row) == 5:
-                    dictionary_row["id"] = row[0]
                     dictionary_row["width"] = row[1]
                     dictionary_row["height"] = row[2]
                     dictionary_row["x"] = row[3]
                     dictionary_row["y"] = row[4]
             elif cls.__name__ == "Square":
                 if len(row) == 4:
-                    dictionary_row["id"] = row[0]
                     dictionary_row["size"] = row[1]
                     dictionary_row["x"] = row[2]
                     dictionary_row["y"] = row[3]
