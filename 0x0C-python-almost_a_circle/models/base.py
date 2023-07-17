@@ -122,7 +122,7 @@ class Base:
                     obj_dict = cls.parse_csv(row)
                     final_list.append(obj_dict)
             for i in final_list:
-                class_created = cls.create(**i);
+                class_created = cls.create(i);
                 obj_list.append(class_created)
         return obj_list      
 
