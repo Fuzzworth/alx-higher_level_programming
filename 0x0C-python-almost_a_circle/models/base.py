@@ -262,6 +262,6 @@ class Base:
                 t.penup()
                 last_width += i.width + 10
                 t.goto(last_width, greatest_height + 10)
-            if last_width > width
+            if last_width > width:
                 width = last_width
         turtle.done()
