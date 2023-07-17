@@ -22,23 +22,6 @@ class Square(Rectangle):
         s = "[Square] ({:d}) {:d}/{:d} - {:d}"
         return s.format(self.id, self.x, self.y, self.width)
 
-    @property
-    def size(self):
-        """
-        Function Docs
-        """
-
-        return self.width
-
-    @size.setter
-    def size(self, value):
-        """
-        Function Docs
-        """
-
-        self.width = value
-        self.height = value
-
     def update(self, *args, **kwargs):
         """
         Function doc
@@ -48,7 +31,8 @@ class Square(Rectangle):
             if len(args) >= 1:
                 self.id = args[0]
             if len(args) >= 2:
-                self.size = args[1]
+                self.width = args[1]
+                self.height = args[1]
             if len(args) >= 3:
                 self.x = args[2]
             if len(args) >= 4:
@@ -57,6 +41,10 @@ class Square(Rectangle):
             valid_attributes = ['id', 'size', 'x', 'y']
             for key, value in kwargs.items():
                 if key in valid_attributes:
+                    if key == 'size':
+                        for i in ["width", "height"]:
+                            exec("self.{} = {}".format(i, value))
+                            continue
                     exec("self.{} = {}".format(key, value))
 
     def to_dictionary(self):
@@ -64,4 +52,4 @@ class Square(Rectangle):
         Function Doc
         """
 
-        return {'id': self.id, 'x': self.x, 'size': self.size, 'y': self.y}
+        return {'id': self.id, 'x': self.x, 'size': self.width, 'y': self.y}
