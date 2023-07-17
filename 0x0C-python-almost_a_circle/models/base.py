@@ -187,6 +187,7 @@ class Base:
             if i.height > greatest_height:
                 greatest_height = i.height
             t.begin_fill()
+            t.pendown()
             t.fd(i.width)
             t.rt(90)
             t.fd(i.height)
@@ -196,6 +197,7 @@ class Base:
             t.fd(i.height)
             t.rt(90)
             t.end_fill()
+            t.penup()
             width += i.width + 10
             t.goto(width, 0)
         width = 0
@@ -204,6 +206,7 @@ class Base:
         for i in list_squares:
             t.color(randint(0, 255), randint(0, 255), randint(0, 255))
             t.begin_fill()
+            t.pendown()
             t.fd(i.size)
             t.rt(90)
             t.fd(i.size)
@@ -213,6 +216,7 @@ class Base:
             t.fd(i.size)
             t.rt(90)
             t.end_fill()
+            t.penup()
             width += i.width + 10
             t.goto(width, greatest_height + 10)
         turtle.done()
