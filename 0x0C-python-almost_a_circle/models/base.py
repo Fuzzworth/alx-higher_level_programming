@@ -178,6 +178,7 @@ class Base:
         screen = turtle.getscreen()
         turtle.bgcolor("black")
         t = turtle.Turtle()
+        width = 0
         greatest_height = float("-inf")
         for i in list_rectangles:
             t.fillcolor("red")
@@ -193,7 +194,9 @@ class Base:
             t.fd(i.height)
             t.rt(90)
             t.end_fill()
-            t.goto(i.width + 10, 0)
+            width += i.width + 10
+            t.goto(width, 0)
+        width = 0
         t.home()
         t.goto(0, greatest_height + 10)
         for i in list_squares:
@@ -208,5 +211,6 @@ class Base:
             t.fd(i.size)
             t.rt(90)
             t.end_fill()
-            t.goto(i.size + 10, greatest_height + 10)
+            width += i.width + 10
+            t.goto(width, greatest_height + 10)
         turtle.done()
