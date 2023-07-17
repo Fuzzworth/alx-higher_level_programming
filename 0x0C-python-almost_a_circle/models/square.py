@@ -33,7 +33,7 @@ class Square(Rectangle):
 
         self.width = value
         self.height = value
-        
+
     def __str__(self):
         """str: Function call"""
         s = "[Square] ({:d}) {:d}/{:d} - {:d}"
