@@ -179,7 +179,7 @@ class Base:
         screen = turtle.getscreen()
         turtle.bgcolor("black")
         t = turtle.Turtle()
-        t.colormode(255)
+        turtle.colormode(255)
         width = 0
         greatest_height = float("-inf")
         for i in list_rectangles:
