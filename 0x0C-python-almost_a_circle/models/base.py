@@ -181,8 +181,7 @@ class Base:
         t = turtle.Turtle()
         turtle.colormode(255)
         for times in range(6):
-            rectangle_width = 0
-            last_width = 0
+            greatest_height = float("-inf")
             width = 0
             for i in list_rectangles:
                 t.color(randint(0, 255), randint(0, 255), randint(0, 255))
@@ -202,9 +201,8 @@ class Base:
                 t.penup()
                 width += i.width + 10
                 t.goto(width, 0)
-            rectangle_width = width
-            width = last_width
-            t.goto(last_width, greatest_height + 10)
+            width = 0
+            t.goto(width, greatest_height + 10)
             for i in list_squares:
                 t.color(randint(0, 255), randint(0, 255), randint(0, 255))
                 t.begin_fill()
@@ -221,8 +219,6 @@ class Base:
                 t.penup()
                 width += i.width + 10
                 t.goto(width, greatest_height + 10)
-            if rectangle_width > width:
-                width = rectangle_width
-            t.home()
+            t.goto(0, 0)
             t.clear()
         turtle.done()
