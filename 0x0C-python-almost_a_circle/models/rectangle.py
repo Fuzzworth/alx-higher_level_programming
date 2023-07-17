@@ -151,9 +151,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """str: Function call"""
-        str_string = "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}"
-        return str_string.format(self.id,
-                            self.x, self.y, self.width, self.height)
+        str_s = "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}"
+        return str_s.format(self.id, self.x, self.y, self.width, self.height)
     def update(self, *args, **kwargs):
         """
         Function doc
