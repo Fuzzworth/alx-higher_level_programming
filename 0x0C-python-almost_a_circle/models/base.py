@@ -165,7 +165,7 @@ class Base:
             list_item.append(obj_item.id)
             if cls.__name__ == "Rectangle":
                 list_item.append(obj_item.width)
-                list_item.append(obj_item.height)    
+                list_item.append(obj_item.height)
             elif cls.__name__ == "Square":
                 list_item.append(obj_item.size)
             list_item.append(obj_item.x)
