@@ -6,6 +6,7 @@ from json import dumps, loads
 from os.path import isfile
 import csv
 import turtle
+from random import randint
 
 
 class Base:
@@ -178,10 +179,13 @@ class Base:
         screen = turtle.getscreen()
         turtle.bgcolor("black")
         t = turtle.Turtle()
+        t.colormode(255)
         width = 0
         greatest_height = float("-inf")
         for i in list_rectangles:
-            t.fillcolor("red")
+            turtle.color(randint(0, 255),
+          randint(0, 255),
+          randint(0, 255))
             if i.height > greatest_height:
                 greatest_height = i.height
             t.begin_fill()
@@ -200,7 +204,10 @@ class Base:
         t.home()
         t.goto(0, greatest_height + 10)
         for i in list_squares:
-            t.fillcolor("blue")
+turtle.color(randint(0, 255),
+          randint(0, 255),
+          randint(0, 255))
+
             t.begin_fill()
             t.fd(i.size)
             t.rt(90)
