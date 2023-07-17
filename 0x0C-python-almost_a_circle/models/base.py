@@ -5,6 +5,7 @@ Module Docs
 from json import dumps, loads
 from os.path import isfile
 import csv
+import turtle
 
 
 class Base:
@@ -166,3 +167,11 @@ class Base:
             list_item.append(obj_item.x)
             list_item.append(obj_item.y)
         return list_item
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """
+        Function doc
+        """
+
+       screen  
