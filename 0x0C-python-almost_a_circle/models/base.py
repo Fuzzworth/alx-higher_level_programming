@@ -227,41 +227,4 @@ class Base:
                 width = rectangle_width
             last_width = width
             t.goto(width, 0)
-            for i in list_rectangles:
-                t.color(randint(0, 255), randint(0, 255), randint(0, 255))
-                if i.height > greatest_height:
-                    greatest_height = i.height
-                t.begin_fill()
-                t.pendown()
-                t.fd(i.width)
-                t.rt(90)
-                t.fd(i.height)
-                t.rt(90)
-                t.fd(i.width)
-                t.rt(90)
-                t.fd(i.height)
-                t.rt(90)
-                t.end_fill()
-                t.penup()
-                width += i.width + 10
-                t.goto(width, 0)
-            t.goto(last_width, greatest_height + 10)
-            for i in list_squares:
-                t.color(randint(0, 255), randint(0, 255), randint(0, 255))
-                t.begin_fill()
-                t.pendown()
-                t.fd(i.size)
-                t.rt(90)
-                t.fd(i.size)
-                t.rt(90)
-                t.fd(i.size)
-                t.rt(90)
-                t.fd(i.size)
-                t.rt(90)
-                t.end_fill()
-                t.penup()
-                last_width += i.width + 10
-                t.goto(last_width, greatest_height + 10)
-            if last_width > width:
-                width = last_width
         turtle.done()
