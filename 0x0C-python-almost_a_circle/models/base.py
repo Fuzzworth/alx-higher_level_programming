@@ -94,7 +94,7 @@ class Base:
                 line = f.readline()
                 final_list = Base.from_json_string(line)
             for i in final_list:
-                class_created = cls.create(**i);
+                class_created = cls.create(**i)
                 obj_list.append(class_created)
         return obj_list
 
