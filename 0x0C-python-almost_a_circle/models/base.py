@@ -180,10 +180,10 @@ class Base:
         turtle.bgcolor("black")
         t = turtle.Turtle()
         turtle.colormode(255)
-        rectangle_width = 0
-        last_width = 0
-        width = 0
         for times in range(6):
+            rectangle_width = 0
+            last_width = 0
+            width = 0
             greatest_height = float("-inf")
             for i in list_rectangles:
                 t.color(randint(0, 255), randint(0, 255), randint(0, 255))
@@ -226,5 +226,5 @@ class Base:
             if rectangle_width > width:
                 width = rectangle_width
             last_width = width
-            t.goto(width, 0)
+            t.clear()
         turtle.done()
