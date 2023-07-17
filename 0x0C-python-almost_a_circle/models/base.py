@@ -46,7 +46,10 @@ class Base:
         Function Docs
         """
 
-        final_list = [i.to_dictionary() for i in list_objs]
+        if list_objs is None:
+            final_list = []
+        else:
+            final_list = [i.to_dictionary() for i in list_objs]
         filename = "{}.json".format(cls.__name__)
         with open(filename, "w") as f:
             f.write(Base.to_json_string(final_list))
