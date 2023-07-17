@@ -174,4 +174,30 @@ class Base:
         Function doc
         """
 
-       screen  
+        turtle.title("21. Let's draw it")
+        screen = turtle.getscreen()
+        turtle.bgcolor("black")
+        t = turtle.Turtle()
+        greatest_height = float("-inf")
+        for i in list_rectangles:
+            t.fillcolor("red")
+            if i.height > greatest_height:
+                greatest_height = i.height
+            t.begin_fill()
+            t.fd(i.width)
+            t.rt(i.height)
+            t.bk(i.width)
+            t.lt(i.height)
+            t.end_fill()
+            t.goto(i.width + 10, 0)
+        t.home()
+        t.goto(0, greatest_height + 10)
+        for i in list_squares:
+            t.fillcolor("blue")
+            t.begin_fill()
+            t.fd(i.size)
+            t.rt(i.size)
+            t.bk(i.size)
+            t.lt(i.size)
+            t.end_fill()
+            t.goto(i.size + 10, greatest_height + 10)
