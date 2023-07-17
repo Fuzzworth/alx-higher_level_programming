@@ -180,7 +180,6 @@ class Base:
         turtle.bgcolor("black")
         t = turtle.Turtle()
         turtle.colormode(255)
-        square_width = 0
         rectangle_width = 0
         width = 0
         greatest_height = float("-inf")
@@ -243,9 +242,8 @@ class Base:
             t.penup()
             width += i.width + 10
             t.goto(width, 0)
-        rectangle_width = width
-        width = 0
-        t.home()
+        if rectangle_width > width:
+            width = rectangle_width
         t.goto(width, greatest_height + 10)
         for i in list_squares:
             t.color(randint(0, 255), randint(0, 255), randint(0, 255))
