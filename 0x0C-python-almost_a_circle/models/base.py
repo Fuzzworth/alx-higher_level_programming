@@ -105,7 +105,7 @@ class Base:
         with open(filename, mode='w') as csv_file:
             csv_writer = csv.writer(csv_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
             for i in list_objs:
-                i_list = cls.parse_dictionary_to_csv(i)
+                i_list = cls.to_dictionary(i)
                 print(i)
                 print(i_list)
                 csv_writer.writerow(i_list)
