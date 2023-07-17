@@ -246,7 +246,7 @@ class Base:
         rectangle_width = width
         width = 0
         t.home()
-        t.goto(0, greatest_height + 10)
+        t.goto(width, greatest_height + 10)
         for i in list_squares:
             t.color(randint(0, 255), randint(0, 255), randint(0, 255))
             t.begin_fill()
