@@ -4,6 +4,7 @@ Module Docs
 """
 from json import dumps, loads
 from os.path import isfile
+import csv
 
 
 class Base:
@@ -82,15 +83,99 @@ class Base:
         """
         Function Doc
         """
+
         filename = "{}.json".format(cls.__name__)
+        obj_list = []
         if isfile(filename):
             with open(filename, "r") as f:
                 line = f.readline()
                 final_list = Base.from_json_string(line)
-            obj_list = []
             for i in final_list:
                 class_created = cls.create(**i);
                 obj_list.append(class_created)
-            return obj_list
-        else:
-            return []
+        return obj_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        function docs
+        """
+
+        filename = "{}.csv".format(cls.__name__)
+        with open(filename, mode='w') as csv_file:
+            csv_writer = csv.writer(csv_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+            for i in list_objs:
+                csv_writer.writerow(cls.parse_dictionary_to_csv(i))
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        function docs
+        """
+        filename = "{}.csv".format(cls.__name__)
+        obj_list = []
+        if isfile(filename):
+            final_list = []
+            with open(filename, "r") as csv_file:
+                csv_reader = csv.reader(csv_file, delimiter=',')
+                for row in csv_reader:
+                    obj_dict = cls.parse_csv(row)
+                    final_list.append(obj_dict)
+            for i in final_list:
+                class_created = cls.create(**i);
+                obj_list.append(class_created)
+        return obj_list      
+
+    @classmethod
+    def parse_csv(cls, row):
+        """
+        Function doc
+        """
+
+        dictionary_row = {}
+        if type(row) is list:
+            dictionary_row = []
+            if cls.__name__ = "Rectangle":
+                if len(row) == 5:
+                    dictionary_row["id"] = row[0]
+                    dictionary_row["width"] = row[1]
+                    dictionary_row["height"] = row[2]
+                    dictionary_row["x"] = row[3]
+                    dictionary_row["y"] = row[4]
+            elif cls.__name__ = "Square":
+                if len(row) == 4:
+                    dictionary_row["id"] = row[0]
+                    dictionary_row["size"] = row[1]
+                    dictionary_row["x"] = row[2]
+                    dictionary_row["y"] = row[3]
+        return dictionary_row
+
+    @classmethod
+    def parse_dictionary_to_csv(cls, dictionary):
+        """
+        Function doc
+        """
+
+        list_item = []
+        if type(dictionary) is dict:
+            if cls.__name__ = "Rectangle":
+                if "id" in dictionary:
+                    list_item.append(dictionary["id"])
+                if "width" in dictionary:
+                    list_item.append(dictionary_row["width"])
+                if "height" in dictionary:
+                    list_item.append(dictionary_row["height"])
+                if "x" in dictionary:
+                    list_item.append(dictionary_row["x"])
+                if "y" in dictionary:
+                    list_item.append(dictionary_row["y"])
+            elif cls.__name__ = "Square":
+                if "id" in dictionary:
+                    list_item.append(dictionary_row["id"])
+                if "size" in dictionary:
+                    list_item.append(dictionary_row["size"])
+                if "x" in dictionary:
+                    list_item.append(dictionary_row["x"])
+                if "y" in dictionary:
+                    list_item.append(dictionary_row["y"])
+        return list_item
