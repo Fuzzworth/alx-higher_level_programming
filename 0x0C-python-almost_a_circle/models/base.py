@@ -106,8 +106,6 @@ class Base:
             csv_writer = csv.writer(csv_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
             for i in list_objs:
                 i_list = cls.to_list(i)
-                print(i)
-                print(i_list)
                 csv_writer.writerow(i_list)
 
     @classmethod
@@ -122,9 +120,7 @@ class Base:
             with open(filename, "r") as csv_file:
                 csv_reader = csv.reader(csv_file, delimiter=',')
                 for row in csv_reader:
-                    print(row)
                     obj_dict = cls.parse_csv(row)
-                    print(obj_dict)
                     final_list.append(obj_dict)
             for i in final_list:
                 class_created = cls.create(**i);
