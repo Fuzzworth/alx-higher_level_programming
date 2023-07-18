@@ -213,7 +213,7 @@ class Base:
                     t.end_fill()
                     t.penup()
                     if direction == 0:
-                        width += i.width + 10
+                        width += inew_list[i].width + 10
                     elif direction == 1:
                         if i != len(new_list) - 1:
                             width += -new_list[i + 1].width - 10
@@ -222,7 +222,7 @@ class Base:
                             height += new_list[i + 1].height + 10
                     elif direction == 3:
                         if i != len(new_list) - 1:
-                            height += -new_list[i + 1].height - 10
+                            height += -new_list[i].height - 10
                     t.goto(width, height)
                 t.goto(0, 0)
                 t.clear()
