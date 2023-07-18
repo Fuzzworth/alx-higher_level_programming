@@ -182,7 +182,6 @@ class Base:
         """
 
         new_list = list_rectangles + list_squares
-        
         try:
             turtle.title("21. Let's draw it")
             screen = turtle.getscreen()
