@@ -218,11 +218,11 @@ class Base:
                     if direction == 0:
                         width += i.width + 10
                     elif direction == 1:
-                        width -= i.width - 10
+                        width += -i.width - 10
                     elif direction == 2:
-                        height = i.height + 10
+                        height += i.height + 10
                     else:
-                        height = -i.height - 10
+                        height += -i.height - 10
                     t.goto(width, height)
                 t.goto(0, 0)
                 t.clear()
