@@ -181,6 +181,8 @@ class Base:
         Function doc
         """
 
+        new_list = list_rectangles + list_squares
+
         turtle.title("21. Let's draw it")
         screen = turtle.getscreen()
         turtle.bgcolor("black")
@@ -189,7 +191,7 @@ class Base:
         for times in range(6):
             greatest_height = float("-inf")
             width = 0
-            for i in list_rectangles.reverse():
+            for i in new_list:
                 t.color(randint(0, 255), randint(0, 255), randint(0, 255))
                 if i.height > greatest_height:
                     greatest_height = i.height
@@ -207,24 +209,6 @@ class Base:
                 t.penup()
                 width += i.width + 10
                 t.goto(width, 0)
-            width = 0
-            t.goto(width, -greatest_height - 10)
-            for i in list_squares.reverse():
-                t.color(randint(0, 255), randint(0, 255), randint(0, 255))
-                t.begin_fill()
-                t.pendown()
-                t.fd(i.width)
-                t.rt(90)
-                t.fd(i.height)
-                t.rt(90)
-                t.fd(i.width)
-                t.rt(90)
-                t.fd(i.height)
-                t.rt(90)
-                t.end_fill()
-                t.penup()
-                width += i.width + 10
-                t.goto(width, -greatest_height - 10)
             t.goto(0, 0)
             t.clear()
         turtle.done()
