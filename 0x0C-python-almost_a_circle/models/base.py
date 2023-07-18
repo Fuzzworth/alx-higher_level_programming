@@ -200,7 +200,7 @@ class Base:
                     shuffle(new_list)
                 height = 0
                 width = 0
-                direction = randrange(5)
+                direction = randrange(4)
                 for i in range(len(new_list)):
                     t.color(randint(0, 255), randint(0, 255), randint(0, 255))
                     t.begin_fill()
