@@ -6,7 +6,7 @@ from json import dumps, loads
 from os.path import isfile
 import csv
 import turtle
-from random import randint, shuffle
+from random import randint, shuffle, randrange
 
 
 class Base:
@@ -198,12 +198,11 @@ class Base:
             while True:
                 if r:
                     shuffle(new_list)
-                greatest_height = float("-inf")
+                height = 0
                 width = 0
+                direction = randrange(4)
                 for i in new_list:
                     t.color(randint(0, 255), randint(0, 255), randint(0, 255))
-                    if i.height > greatest_height:
-                        greatest_height = i.height
                     t.begin_fill()
                     t.pendown()
                     t.fd(i.width)
@@ -216,8 +215,15 @@ class Base:
                     t.rt(90)
                     t.end_fill()
                     t.penup()
-                    width += i.width + 10
-                    t.goto(width, 0)
+                    if direction == 0:
+                        width += i.width + 10
+                    elif direction == 1:
+                        width -= i.width - 10
+                    elif direction == 2:
+                        height = i.height + 10
+                    else:
+                        height = -i.height - 10
+                    t.goto(width, height)
                 t.goto(0, 0)
                 t.clear()
                 r = True
