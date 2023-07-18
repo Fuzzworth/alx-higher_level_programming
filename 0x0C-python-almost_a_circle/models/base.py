@@ -213,7 +213,8 @@ class Base:
                     t.end_fill()
                     t.penup()
                     if direction == 1:
-                        width += new_list[i].width + 10
+                        if i != len(new_list) - 1:
+                            width += new_list[i].width + 10
                     elif direction == 2:
                         if i != len(new_list) - 1:
                             width += -new_list[i + 1].width - 10
