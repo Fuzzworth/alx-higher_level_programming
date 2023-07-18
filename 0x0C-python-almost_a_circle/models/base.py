@@ -188,9 +188,11 @@ class Base:
         turtle.bgcolor("black")
         t = turtle.Turtle()
         turtle.colormode(255)
+        def exit_on_click(i, j):
+            turtle.done()
+        tur.onclick(exit_on_click)
         r = False
         while True:
-            turtle.exitonclick()
             if r:
                 shuffle(new_list)
             greatest_height = float("-inf")
@@ -216,4 +218,3 @@ class Base:
             t.goto(0, 0)
             t.clear()
             r = True
-        turtle.done()
