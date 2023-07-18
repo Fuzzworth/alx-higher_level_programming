@@ -221,7 +221,7 @@ class Base:
                         width += -i.width - 10
                     elif direction == 2:
                         height += i.height + 10
-                    else:
+                    elif direction = 3:
                         height += -i.height - 10
                     t.goto(width, height)
                 t.goto(0, 0)
