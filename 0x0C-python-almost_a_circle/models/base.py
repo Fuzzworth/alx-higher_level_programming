@@ -189,7 +189,7 @@ class Base:
         for times in range(6):
             greatest_height = float("-inf")
             width = 0
-            for i in list_rectangles:
+            for i in list_rectangles.reverse():
                 t.color(randint(0, 255), randint(0, 255), randint(0, 255))
                 if i.height > greatest_height:
                     greatest_height = i.height
@@ -209,17 +209,17 @@ class Base:
                 t.goto(width, 0)
             width = 0
             t.goto(width, -greatest_height - 10)
-            for i in list_squares:
+            for i in list_squares.reverse():
                 t.color(randint(0, 255), randint(0, 255), randint(0, 255))
                 t.begin_fill()
                 t.pendown()
-                t.fd(i.size)
+                t.fd(i.width)
                 t.rt(90)
-                t.fd(i.size)
+                t.fd(i.height)
                 t.rt(90)
-                t.fd(i.size)
+                t.fd(i.width)
                 t.rt(90)
-                t.fd(i.size)
+                t.fd(i.height)
                 t.rt(90)
                 t.end_fill()
                 t.penup()
