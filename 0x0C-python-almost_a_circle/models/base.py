@@ -188,7 +188,6 @@ class Base:
         turtle.bgcolor("black")
         t = turtle.Turtle()
         turtle.colormode(255)
-        turtle.exitonclick()
         while True:
             greatest_height = float("-inf")
             width = 0
@@ -212,4 +211,6 @@ class Base:
                 t.goto(width, 0)
             t.goto(0, 0)
             t.clear()
+
+        turtle.exitonclick()
         turtle.done()
