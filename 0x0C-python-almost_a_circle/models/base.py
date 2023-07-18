@@ -201,28 +201,28 @@ class Base:
                 height = 0
                 width = 0
                 direction = randrange(4)
-                for i in new_list:
+                for i in range(len(new_list)):
                     t.color(randint(0, 255), randint(0, 255), randint(0, 255))
                     t.begin_fill()
                     t.pendown()
-                    t.fd(i.width)
-                    t.rt(90)
-                    t.fd(i.height)
-                    t.rt(90)
-                    t.fd(i.width)
-                    t.rt(90)
-                    t.fd(i.height)
-                    t.rt(90)
+                    for j in range(2):
+                        t.fd(new_list[i].width)
+                        t.rt(90)
+                        t.fd(new_list[i].height)
+                        t.rt(90)
                     t.end_fill()
                     t.penup()
                     if direction == 0:
                         width += i.width + 10
                     elif direction == 1:
-                        width += -i.width - 10
+                        if i != len(new_list) - 1:
+                            width += -new_list[i + 1].width - 10
                     elif direction == 2:
-                        height += i.height + 10
+                        if i != len(new_list) - 1:
+                            height += new_list[i + 1].height + 10
                     elif direction == 3:
-                        height += -i.height - 10
+                        if i != len(new_list) - 1:
+                            height += -inex_list[i].height - 10
                     t.goto(width, height)
                 t.goto(0, 0)
                 t.clear()
