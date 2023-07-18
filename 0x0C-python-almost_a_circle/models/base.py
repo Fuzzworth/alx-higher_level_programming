@@ -212,6 +212,7 @@ class Base:
                         t.rt(90)
                     t.end_fill()
                     t.penup()
+                    print(direction)
                     if direction == 1:
                         if i != len(new_list) - 1:
                             width += new_list[i].width + 10
@@ -223,7 +224,7 @@ class Base:
                             height += new_list[i + 1].height + 10
                     elif direction == 4:
                         if i != len(new_list) - 1:
-                            height += -new_list[i + 1].height - 10
+                            height += -new_list[i].height - 10
                     t.goto(width, height)
                 t.goto(0, 0)
                 t.clear()
