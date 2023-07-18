@@ -232,7 +232,7 @@ class Rectangle(Base):
         """
 
         return self.area() >= other.area()
-    
+
     def __gt__(self, other):
         """
         Function Doc
