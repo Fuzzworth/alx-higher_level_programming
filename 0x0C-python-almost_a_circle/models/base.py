@@ -200,7 +200,7 @@ class Base:
                     shuffle(new_list)
                 height = 0
                 width = 0
-                direction = randrange(4)
+                direction = randrange(5)
                 for i in range(len(new_list)):
                     t.color(randint(0, 255), randint(0, 255), randint(0, 255))
                     t.begin_fill()
@@ -213,7 +213,7 @@ class Base:
                     t.end_fill()
                     t.penup()
                     if direction == 1:
-                        width += inew_list[i].width + 10
+                        width += new_list[i].width + 10
                     elif direction == 2:
                         if i != len(new_list) - 1:
                             width += -new_list[i + 1].width - 10
