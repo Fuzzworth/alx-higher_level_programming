@@ -188,7 +188,10 @@ class Base:
         turtle.bgcolor("black")
         t = turtle.Turtle()
         turtle.colormode(255)
+        r = False
         while True:
+            if r:
+                random.shuffle(new_list)
             greatest_height = float("-inf")
             width = 0
             for i in new_list:
@@ -211,6 +214,5 @@ class Base:
                 t.goto(width, 0)
             t.goto(0, 0)
             t.clear()
-
-        turtle.exitonclick()
+            r = True
         turtle.done()
