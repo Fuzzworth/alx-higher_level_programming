@@ -188,7 +188,8 @@ class Base:
         turtle.bgcolor("black")
         t = turtle.Turtle()
         turtle.colormode(255)
-        for times in range(6):
+        turtle.exitonclick()
+        while True:
             greatest_height = float("-inf")
             width = 0
             for i in new_list:
