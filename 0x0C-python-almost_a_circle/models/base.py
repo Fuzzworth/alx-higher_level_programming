@@ -224,7 +224,7 @@ class Base:
                 t.end_fill()
                 t.penup()
                 width += i.width + 10
-                t.goto(width, greatest_height + 10)
+                t.goto(width, -greatest_height - 10)
             t.goto(0, 0)
             t.clear()
         turtle.done()
