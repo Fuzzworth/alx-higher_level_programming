@@ -6,7 +6,7 @@ from json import dumps, loads
 from os.path import isfile
 import csv
 import turtle
-from random import randint
+from random import randint, shuffle
 
 
 class Base:
@@ -191,7 +191,7 @@ class Base:
         r = False
         while True:
             if r:
-                random.shuffle(new_list)
+                shuffle(new_list)
             greatest_height = float("-inf")
             width = 0
             for i in new_list:
