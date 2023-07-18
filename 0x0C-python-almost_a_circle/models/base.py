@@ -188,8 +188,10 @@ class Base:
             turtle.bgcolor("black")
             t = turtle.Turtle()
             turtle.colormode(255)
+
             def exit_on_click(i, j):
                 screen.exitonclick()
+
             screen.onclick(exit_on_click)
             screen.listen()
             r = False
