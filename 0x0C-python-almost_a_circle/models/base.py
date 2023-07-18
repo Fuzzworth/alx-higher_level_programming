@@ -182,40 +182,43 @@ class Base:
         """
 
         new_list = list_rectangles + list_squares
-
-        turtle.title("21. Let's draw it")
-        screen = turtle.getscreen()
-        turtle.bgcolor("black")
-        t = turtle.Turtle()
-        turtle.colormode(255)
-        def exit_on_click(i, j):
-            screen.exitonclick()
-        screen.onclick(exit_on_click)
-        screen.listen()
-        r = False
-        while True:
-            if r:
-                shuffle(new_list)
-            greatest_height = float("-inf")
-            width = 0
-            for i in new_list:
-                t.color(randint(0, 255), randint(0, 255), randint(0, 255))
-                if i.height > greatest_height:
-                    greatest_height = i.height
-                t.begin_fill()
-                t.pendown()
-                t.fd(i.width)
-                t.rt(90)
-                t.fd(i.height)
-                t.rt(90)
-                t.fd(i.width)
-                t.rt(90)
-                t.fd(i.height)
-                t.rt(90)
-                t.end_fill()
-                t.penup()
-                width += i.width + 10
-                t.goto(width, 0)
-            t.goto(0, 0)
-            t.clear()
-            r = True
+        
+        try:
+            turtle.title("21. Let's draw it")
+            screen = turtle.getscreen()
+            turtle.bgcolor("black")
+            t = turtle.Turtle()
+            turtle.colormode(255)
+            def exit_on_click(i, j):
+                screen.exitonclick()
+            screen.onclick(exit_on_click)
+            screen.listen()
+            r = False
+            while True:
+                if r:
+                    shuffle(new_list)
+                greatest_height = float("-inf")
+                width = 0
+                for i in new_list:
+                    t.color(randint(0, 255), randint(0, 255), randint(0, 255))
+                    if i.height > greatest_height:
+                        greatest_height = i.height
+                    t.begin_fill()
+                    t.pendown()
+                    t.fd(i.width)
+                    t.rt(90)
+                    t.fd(i.height)
+                    t.rt(90)
+                    t.fd(i.width)
+                    t.rt(90)
+                    t.fd(i.height)
+                    t.rt(90)
+                    t.end_fill()
+                    t.penup()
+                    width += i.width + 10
+                    t.goto(width, 0)
+                t.goto(0, 0)
+                t.clear()
+                r = True
+        except Exception:
+            print("Goodbye!")
