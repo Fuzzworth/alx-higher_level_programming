@@ -190,6 +190,7 @@ class Base:
         turtle.colormode(255)
         r = False
         while True:
+            turtle.exitonclick()
             if r:
                 shuffle(new_list)
             greatest_height = float("-inf")
