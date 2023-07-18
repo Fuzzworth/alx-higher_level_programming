@@ -190,7 +190,7 @@ class Base:
         turtle.colormode(255)
         def exit_on_click(i, j):
             turtle.done()
-        t.onclick(exit_on_click)
+        turtle.onclick(exit_on_click)
         r = False
         while True:
             if r:
