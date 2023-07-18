@@ -75,9 +75,9 @@ class Base:
         """
 
         if cls.__name__ == "Rectangle":
-            dummy_obj = cls(0, 0)
+            dummy_obj = cls(1, 1)
         elif cls.__name__ == "Square":
-            dummy_obj = cls(0)
+            dummy_obj = cls(1)
         else:
             dummy_obj = cls()
             return dummy_obj
