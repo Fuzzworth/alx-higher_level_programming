@@ -1,0 +1,2 @@
+-- Write a script that lists all shows without the genre Comedy in the database hbtn_0d_tvshows.
+SELECT tv_shows.title FROM tv_shows LEFT JOIN (SELECT tv_shows.title FROM tv_shows INNER JOIN tv_show_genres ON tv_show_genres.show_id = tv_shows.id INNER JOIN tv_genres ON tv_genres.id = tv_show_genres.genre_id WHERE tv_genres.name = "Comedy" ORDER BY tv_shows.id) comedy_shows ON comedy_shows.title = tv_shows.title WHERE comedy_shows.title IS NULL ORDER BY tv_shows.title;
