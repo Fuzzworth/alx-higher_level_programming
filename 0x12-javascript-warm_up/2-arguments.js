@@ -1,3 +1,3 @@
 #!/usr/bin/node
-import { argv } from 'node:process';
-console.log('${argv}');
+const process = require('node:process');
+console.log('${process.argv}');
