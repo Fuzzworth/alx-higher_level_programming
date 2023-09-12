@@ -9,7 +9,7 @@ module.exports = class Square extends Rectangle {
 		let row = '';
 		for (let x = 0; x < this.height; x++) {
 			for (let y = 0; y < this.width; y++) {
-				row = row + '' + c;
+				row = row + c;
 			}
 			console.log(row);
 			row = '';
