@@ -27,16 +27,16 @@ if __name__ == '__main__':
                 pass
             try:
                 code = int(stripped[status_code_index])
+                if code in valid_index:
+                    print(line)
+                    print(code)
+                    print(code_dict)
+                    if code in code_dict:
+                        code_dict[code] = code_dict[code] + 1
+                    else:
+                        code_dict[code] = 1
             except (IndexError, ValueError):
                 pass
-            if code in valid_index:
-                print(line)
-                print(code)
-                print(code_dict)
-                if code in code_dict:
-                    code_dict[code] = code_dict[code] + 1
-                else:
-                    code_dict[code] = 1
             
             i += 1
         print("File size: {:d}".format(total_size))

@@ -2,6 +2,6 @@
 def safe_print_integer(value):
     try:
         print("{:d}".format(value))
-        return True
-    except Exception:
-        return False
+    except (ValueError, TypeError):
+        pass
+    return isinstance(value, int)
