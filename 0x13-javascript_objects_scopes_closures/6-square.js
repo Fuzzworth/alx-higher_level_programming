@@ -7,8 +7,8 @@ module.exports = class Square extends Rectangle {
 
   charPrint (c = 'X') {
     let row = '';
-    for (let x = 0; x < this.size; x++) {
-      for (let y = 0; y < this.size; y++) {
+    for (let x = 0; x < super.height; x++) {
+      for (let y = 0; y < super.width; y++) {
         row = row + c;
       }
       console.log(row);
