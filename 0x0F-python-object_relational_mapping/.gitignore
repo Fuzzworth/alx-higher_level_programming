@@ -1,0 +1,8 @@
+# .gitignore
+
+# Ignore compiled files or local configuration specific to your development environment
+.venv/
+*.pyc
+./orm_map
+./orm_map/*
+./0-select_states.sql
