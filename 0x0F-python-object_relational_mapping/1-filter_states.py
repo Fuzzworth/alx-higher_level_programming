@@ -30,8 +30,6 @@ def main():
                 print(row)
         finally:
             cur.close()
-    except Exception:
-        pass
     finally:
         conn.close()
 
