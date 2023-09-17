@@ -22,15 +22,18 @@ def main():
         conn = MySQLdb.connect(host=db_host, port=db_port,
                                user=db_user, passwd=db_password,
                                db=db_db, charset="utf8")
-        cur = conn.cursor()
-        cur.execute(query_string)
-        query_rows = cur.fetchall()
-        for row in query_rows:
-            print(row)
-        cur.close()
-        conn.close()
+        try:
+            cur = conn.cursor()
+            cur.execute(query_string)
+            query_rows = cur.fetchall()
+            for row in query_rows:
+                print(row)
+        finally:
+            cur.close()
     except Exception:
         pass
+    finally:
+        conn.close()
 
 
 if __name__ == "__main__":
