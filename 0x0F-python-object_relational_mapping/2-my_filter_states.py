@@ -15,11 +15,11 @@ def main():
     db_db = argv[3]
     db_host = "localhost"
     db_port = 3306
-    search_string = "%" + argv[4] + "%"
+    search_string = argv[4]
 
     try:
         query_string = "SELECT id, name FROM states WHERE "
-        query_string += f"name LIKE '{search_string}' ORDER BY id ASC"
+        query_string += f"name='{search_string}' ORDER BY id ASC"
         conn = MySQLdb.connect(host=db_host, port=db_port,
                                user=db_user, passwd=db_password,
                                db=db_db, charset="utf8")
