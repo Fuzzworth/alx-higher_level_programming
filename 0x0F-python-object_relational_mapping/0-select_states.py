@@ -17,7 +17,9 @@ def main():
     db_port = 3306
 
     try:
-        conn = MySQLdb.connect(host=db_host, port=db_port, user=db_user, passwd=db_password, db=db_db, charset="utf8")
+        conn = MySQLdb.connect(host=db_host, port=db_port,
+                               user=db_user, passwd=db_password,
+                               db=db_db, charset="utf8")
         cur = conn.cursor()
         cur.execute("SELECT id, name FROM states ORDER BY id ASC")
         query_rows = cur.fetchall()
