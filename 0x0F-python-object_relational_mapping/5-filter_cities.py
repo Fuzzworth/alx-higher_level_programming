@@ -18,17 +18,10 @@ def main():
     state_name = argv[4]
 
     try:
-        qs = """
-            SELECT UNIQUE cities.name
-            FROM states
-            LEFT JOIN cities
-            ON cities.state_id=(
-                SELECT id
-                FROM states
-                WHERE states.name = %s
-            )
-            ORDER BY cities.id ASC
-            """
+        qs = """SELECT cities.name FROM cities
+        INNER JOIN states ON cities.state_id = states.id
+        WHERE states.name = %s 
+        ORDER BY cities.id ASC"""
         conn = MySQLdb.connect(host=db_host, port=db_port,
                                user=db_user, passwd=db_password,
                                db=db_db, charset="utf8")
