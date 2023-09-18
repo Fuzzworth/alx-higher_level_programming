@@ -20,7 +20,7 @@ def main():
     try:
         qs = """SELECT cities.name FROM cities
         INNER JOIN states ON cities.state_id = states.id
-        WHERE states.name = %s 
+        WHERE states.name = %s
         ORDER BY cities.id ASC"""
         conn = MySQLdb.connect(host=db_host, port=db_port,
                                user=db_user, passwd=db_password,
