@@ -18,7 +18,7 @@ def main():
     search_string = argv[4]
 
     query_string = "SELECT id, name FROM states WHERE "
-    query_string += "name='{}' ORDER BY id ASC".format(
+    query_string += "name LIKE BINARY '{}' ORDER BY id ASC".format(
             search_string.strip("")
             )
     conn = MySQLdb.connect(host=db_host, port=db_port,
