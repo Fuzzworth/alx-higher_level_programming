@@ -27,11 +27,10 @@ def main():
     cur = conn.cursor()
     cur.execute(qs, (state_name, ))
     query_rows = cur.fetchall()
-    if query_rows:
-        list_result = []
-        for row in query_rows:
-            list_result.append(row[0])
-        print(", ".join(list_result))
+    list_result = []
+    for row in query_rows:
+        list_result.append(row[0])
+    print(", ".join(list_result))
     cur.close()
     conn.close()
 
