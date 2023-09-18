@@ -19,7 +19,9 @@ def main():
 
     try:
         query_string = "SELECT id, name FROM states WHERE "
-        query_string += "name='{}' ORDER BY id ASC".format(search_string)
+        query_string += "name='{}' ORDER BY id ASC".format(
+                search_string.strip("")
+                )
         conn = MySQLdb.connect(host=db_host, port=db_port,
                                user=db_user, passwd=db_password,
                                db=db_db, charset="utf8")
