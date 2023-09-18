@@ -29,7 +29,7 @@ def main():
     Session = sessionmaker(bind=engine)
     session = Session()
     state = State(name='California')
-    city = City(name='San Francisco', state=new_state)
+    city = City(name='San Francisco', state=state)
     session.add(city)
     session.commit()
     session.close()
