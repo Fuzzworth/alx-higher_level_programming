@@ -17,8 +17,9 @@ def main():
     db_port = 3306
 
     try:
-        query_string = "SELECT * FROM states WHERE "
-        query_string += "name LIKE 'N%' ORDER BY id ASC"
+        query_string = "SELECT * FROM states WHERE CONVERT(name USING Latin1)"
+        query_string += " COLLATE Latin1_General_CS"
+        query_string += " LIKE 'N%'"
         conn = MySQLdb.connect(host=db_host, port=db_port,
                                user=db_user, passwd=db_password,
                                db=db_db, charset="utf8")
