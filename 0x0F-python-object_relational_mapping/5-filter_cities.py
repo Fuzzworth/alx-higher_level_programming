@@ -17,26 +17,23 @@ def main():
     db_port = 3306
     state_name = argv[4]
 
-    try:
-        qs = """SELECT cities.name FROM cities
-        INNER JOIN states ON cities.state_id = states.id
-        WHERE states.name = %s
-        ORDER BY cities.id ASC"""
-        conn = MySQLdb.connect(host=db_host, port=db_port,
-                               user=db_user, passwd=db_password,
-                               db=db_db, charset="utf8")
-        cur = conn.cursor()
-        cur.execute(qs, (state_name, ))
-        query_rows = cur.fetchall()
-        if query_rows:
-            list_result = []
-            for row in query_rows:
-                list_result.append(row[0])
-            print(", ".join(list_result))
-        cur.close()
-        conn.close()
-    except Exception:
-        pass
+    qs = """SELECT cities.name FROM cities
+    INNER JOIN states ON cities.state_id = states.id
+    WHERE states.name = %s
+    ORDER BY cities.id ASC"""
+    conn = MySQLdb.connect(host=db_host, port=db_port,
+                           user=db_user, passwd=db_password,
+                           db=db_db, charset="utf8")
+    cur = conn.cursor()
+    cur.execute(qs, (state_name, ))
+    query_rows = cur.fetchall()
+    if query_rows:
+        list_result = []
+        for row in query_rows:
+            list_result.append(row[0])
+        print(", ".join(list_result))
+    cur.close()
+    conn.close()
 
 
 if __name__ == "__main__":
