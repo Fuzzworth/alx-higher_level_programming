@@ -14,7 +14,8 @@ def _fp_r(list_of_integers, begin, end):
     if list_of_integers[mid] >= list_of_integers[mid - 1]
     and list_of_integers[mid] >= list_of_integers[mid + 1]:
         return list_of_integers[mid]
-    return _fp_r(list_of_integers, begin, mid) or _fp_r(list_of_integers, mid, end)
+    return _fp_r(list_of_integers, begin, mid)
+    or _fp_r(list_of_integers, mid, end)
 
 
 def find_peak(list_of_integers):
