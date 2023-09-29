@@ -12,5 +12,5 @@ if __name__ == "__main__":
         with urlopen(Request(argv[1])) as response:
             html = response.read()
             print(html.decode('utf-8'))
-    except HTTPError as excption:
+    except HTTPError as exception:
         print('Error code:', exception.code)
