@@ -11,3 +11,4 @@ with urllib.request.urlopen(url) as response:
     header = response.getheader("Content-type")
     print(html)
     print(header)
+    print(type(html))
