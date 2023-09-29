@@ -9,5 +9,5 @@ import urllib.request
 if __name__ == "__main__":
     url = argv[1]
     with urllib.request.urlopen(url) as response:
-        html = response.read().getparameter("X-Request-Id")
+        html = response.read().getparam("X-Request-Id")
         print(f"{html}")
