@@ -16,4 +16,3 @@ with urllib.request.urlopen(url) as response:
         print("\t- utf8 content: {}".format("OK"))
     else:
         print("\t- utf8 content: {}".format("BAD"))
-
