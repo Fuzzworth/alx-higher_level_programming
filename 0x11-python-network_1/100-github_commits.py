@@ -11,8 +11,10 @@ if __name__ == "__main__":
     commit_str = "{}: {}"
     url = "https://api.github.com/repos/{}/{}/commits"
     formated_url = url.format(argv[2], argv[1])
+    print(formated_url)
     for commit in requests.get(url).json():
         if total < 10:
-            print(commit_str.format(commit.get("sha"),
-                  commit.get("commit").get("author").get("name")))
+            sha = commit.get("sha")
+            name = commit.get("commit").get("author").get("name")
+            print(commit_str.format(sha, name))
         total += 1
