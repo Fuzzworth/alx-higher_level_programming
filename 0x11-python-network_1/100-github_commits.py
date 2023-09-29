@@ -14,6 +14,7 @@ if __name__ == "__main__":
     res = requests.get(url)
     print(formated_url)
     print(res)
+    print(res.json())
     for commit in res.json():
         print(commit)
         if total < 10:
