@@ -7,5 +7,7 @@ import urllib.request
 
 url = 'https://alx-intranet.hbtn.io/status'
 with urllib.request.urlopen(url) as response:
-    html = response
+    html = response.read()
+    header = response.get_header("type")
     print(html)
+    print(header)
