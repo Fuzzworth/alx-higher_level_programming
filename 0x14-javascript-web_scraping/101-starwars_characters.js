@@ -8,7 +8,7 @@ request(char_url, { json: true }, (error, response, body) => {
 if (!error) {
 console.log(body.name);
 }
-}
 });
+}
 }
 });
