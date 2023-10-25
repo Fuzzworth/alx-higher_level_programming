@@ -9,6 +9,6 @@ if (!error) {
 console.log(body.name);
 }
 }
-}
 });
+}
 });
