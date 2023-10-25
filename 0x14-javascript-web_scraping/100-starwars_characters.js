@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const request = require('request');
 const util = require('util');
-const prequest = util.promisify(request);
+const pr = util.promisify(request);
 const url = 'https://swapi-api.hbtn.io/api/films/' + process.argv[2];
 request.get(url, (error, response, body) => {
   if (error) {
@@ -11,7 +11,7 @@ request.get(url, (error, response, body) => {
 });
 
 async function getCharacter(characters, index) {
-    request.get(characters[i], (errorInner, responseInner, bodyInner) => {
+    pr.get(characters[i], (errorInner, responseInner, bodyInner) => {
       if (errorInner) {
         console.log(errorInner);
       }
