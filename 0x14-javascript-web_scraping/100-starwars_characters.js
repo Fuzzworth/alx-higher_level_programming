@@ -5,8 +5,8 @@ request.get(url, (error, response, body) => {
   if (error) {
     console.log(error);
   }
-  for (const character of JSON.parse(body).characters) {
-    request.get(character, (errorInner, responseInner, bodyInner) => {
+  for (let i = 0; i < JSON.parse(body).characters.length; i++)  {
+    request.get(JSON.parse(body).characters[i], (errorInner, responseInner, bodyInner) => {
       if (errorInner) {
         console.log(errorInner);
       }
