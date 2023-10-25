@@ -7,7 +7,7 @@ await pr.get(url, (error, response, body) => {
   if (error) {
     console.log(error);
   }
-  await getCharacter(JSON.parse(body).characters, 0);
+  getCharacter(JSON.parse(body).characters, 0);
 });
 
 async function getCharacter(characters, index) {
