@@ -11,7 +11,7 @@ request.get(url, (error, response, body) => {
 });
 
 async function getCharacter(characters, index) {
-    pr.get(characters[i], (errorInner, responseInner, bodyInner) => {
+    await pr.get(characters[i], (errorInner, responseInner, bodyInner) => {
       if (errorInner) {
         console.log(errorInner);
       }
